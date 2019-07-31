@@ -135,33 +135,46 @@ const HeaderBackground =  styled.div`
 export default () => {
     const [menuOpen, setMenuOpen]  = useState(false);
 
-    return <header id="home">
-        <Menu open={menuOpen}>
+    return (
+        <header id="home">
+          <Menu open={menuOpen}>
             <MenuWrap>
-                <LogoFlat>
-                    <img alt="personal-logo" className="img-responsive" src="images/profile/john.png" />
-                </LogoFlat>
-                <br />
-                <a href="#home"><i className="title-icon fa fa-user"></i>Home</a>
-                <a href="#about"><i className="title-icon fa fa-dashboard"></i>About</a>
-                <a href="#education"><i className="title-icon fa fa-graduation-cap"></i>Education</a>
-                <a href="#skills"><i className="title-icon fa fa-sliders"></i>Skills</a>
-                <a href="#experience"><i className="title-icon fa fa-suitcase"></i>Experience</a>
-                <a href="#portfolios"><i className="title-icon fa fa-archive"></i>Portfolios</a>
-                <a href="#interest"><i className="title-icon fa fa-heart"></i>Interest</a>
-                <a href="#testimonials"><i className="title-icon fa fa-users"></i>Testimonials</a>
-                <a href="#pricing-table"><i className="title-icon fa fa-money"></i>Pricing</a>
-                <a href="#blog"><i className="title-icon fa fa-pencil-square"></i>Blog</a>
-                <a href="#contact"><i className="title-icon fa fa-envelope"></i>Contact</a>
+              <LogoFlat>
+                <img
+                  alt="personal-logo"
+                  className="img-responsive"
+                  src="images/profile/john.png"
+                />
+              </LogoFlat>
+              <br />
+              <a href="#home">
+                <i className="title-icon fa fa-user" />Home
+              </a>
+              <a href="#about">
+                <i className="title-icon fa fa-dashboard" />About
+              </a>
+              <a href="#education">
+                <i className="title-icon fa fa-graduation-cap" />Education
+              </a>
+              <a href="#skills">
+                <i className="title-icon fa fa-sliders" />Skills
+              </a>
+              <a href="#experience">
+                <i className="title-icon fa fa-suitcase" />Experience
+              </a>
+              <a href="#contact">
+                <i className="title-icon fa fa-envelope" />Contact
+              </a>
             </MenuWrap>
             <MenuToggle onClick={() => setMenuOpen(!menuOpen)}>
-                <ToggleNormal>
-                    <TopBar open={menuOpen}>remove</TopBar>
-                    <MiddleBar open={menuOpen}>remove</MiddleBar>
-                    <BottomBar open={menuOpen}>remove</BottomBar>
-                </ToggleNormal>
+              <ToggleNormal>
+                <TopBar open={menuOpen}>remove</TopBar>
+                <MiddleBar open={menuOpen}>remove</MiddleBar>
+                <BottomBar open={menuOpen}>remove</BottomBar>
+              </ToggleNormal>
             </MenuToggle>
-        </Menu>
-        <HeaderBackground></HeaderBackground>
-    </header>
+          </Menu>
+          <HeaderBackground />
+        </header>
+    );
 }

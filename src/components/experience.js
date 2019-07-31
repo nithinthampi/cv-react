@@ -1,6 +1,8 @@
-import React from "react";
+/** @jsx jsx */
+import {css, jsx} from "@emotion/core";
 import styled from "@emotion/styled";
-import {Container} from "./common";
+import Zoom from "react-reveal/Zoom";
+import {Container, Section, SectionTitle, Card, CardContent, text_uppercase, text_center} from "./common";
 
 const Experience = styled.div`
   position: relative;
@@ -56,9 +58,9 @@ const TimelineBlock = styled.div`
   }
 `;
 
-const CardContent = styled.div`
+const TimelineCardContent = styled(CardContent)`
   padding: 20px;
-  p.description {
+  p {
     margin-top: 13px;
     text-align: left;
   }
@@ -67,8 +69,9 @@ const CardContent = styled.div`
 const ModalDot = styled.div`
   outline: 0;
   font-size: 20px;
+  cursor: pointer;
   :hover,
-  focus {
+  :focus {
     color: #12579b;
   }
 `;
@@ -111,7 +114,7 @@ const TimelineDot = styled.div`
   }
 `;
 
-const TimelineContent = styled.div`
+const TimelineCard = styled(Card)`
   position: relative;
   background: #fff;
   margin-right: 0;
@@ -163,133 +166,135 @@ const TimelineInfo = styled.div`
 
 export default () => {
   return (
-    <section id="experience" className="section">
-      <Container>
-        <div className="section-title">
-          <h4 className="text-uppercase text-center">
-            <img src="images/icons/layers.png" alt="demo" />
-            Experience
-          </h4>
-        </div>
+    <Zoom>
+      <Section id="experience">
+        <Container>
+          <SectionTitle>
+            <h4 css={css`${text_uppercase} ${text_center}`}>
+              <img src="images/icons/layers.png" alt="demo" />
+              Experience
+            </h4>
+          </SectionTitle>
 
-        <Experience>
-          <TimelineBlock>
-            <TimelineDot>
-              <h6>D</h6>
-            </TimelineDot>
-            <TimelineContent className="card timeline-content-emotion">
-              <CardContent className="card-content">
-                <TimelineTitle className="timeline-title">Designer</TimelineTitle>
-                <TimelineInfo className="timeline-info">
-                  <h6>
-                    <small>RulerSoft</small>
-                  </h6>
-                  <h6>
-                    <small>Jan 2010 - Mar 2012</small>
-                  </h6>
-                </TimelineInfo>
-                <p className="description">
-                  I started my designing carrier here, spent tow years learning
-                  and working in various designing aspects..
-                </p>
-                <ModalDot
-                  href="#"
-                  className="modal-dot"
-                  data-toggle="modal"
-                  data-target="#myModal-4"
-                >
-                  <i className="fa fa-ellipsis-h" aria-hidden="true" />
-                </ModalDot>
-              </CardContent>
-            </TimelineContent>
-          </TimelineBlock>
+          <Experience>
+            <TimelineBlock>
+              <TimelineDot>
+                <h6>D</h6>
+              </TimelineDot>
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
+                  <TimelineTitle>
+                    Designer
+                  </TimelineTitle>
+                  <TimelineInfo>
+                    <h6>
+                      <small>RulerSoft</small>
+                    </h6>
+                    <h6>
+                      <small>Jan 2010 - Mar 2012</small>
+                    </h6>
+                  </TimelineInfo>
+                  <p>
+                    I started my designing carrier here, spent tow years
+                    learning and working in various designing aspects..
+                  </p>
+                  <ModalDot
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#myModal-4"
+                  >
+                    <i className="fa fa-ellipsis-h" aria-hidden="true" />
+                  </ModalDot>
+                </TimelineCardContent>
+              </TimelineCard>
+            </TimelineBlock>
 
-          <TimelineBlock>
-            <TimelineDot>
-              <h6>F</h6>
-            </TimelineDot>
-            <TimelineContent className="card timeline-content-emotion">
-              <CardContent className="card-content">
-                <TimelineTitle className="timeline-title">
-                  Frontend Developer
-                </TimelineTitle>
-                <TimelineInfo className="timeline-info">
-                  <h6>
-                    <small>Micro IT</small>
-                  </h6>
-                  <h6>
-                    <small>Jan 2012 - Mar 2014</small>
-                  </h6>
-                </TimelineInfo>
-                <p className="description">
-                  I started my frontend carrier here, spent tow years learning
-                  and working in various frontend aspects. I worked on about 40+
-                  projects local and online.
-                </p>
-              </CardContent>
-            </TimelineContent>
-          </TimelineBlock>
+            <TimelineBlock>
+              <TimelineDot>
+                <h6>F</h6>
+              </TimelineDot>
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
+                  <TimelineTitle>
+                    Frontend Developer
+                  </TimelineTitle>
+                  <TimelineInfo>
+                    <h6>
+                      <small>Micro IT</small>
+                    </h6>
+                    <h6>
+                      <small>Jan 2012 - Mar 2014</small>
+                    </h6>
+                  </TimelineInfo>
+                  <p>
+                    I started my frontend carrier here, spent tow years
+                    learning and working in various frontend aspects. I worked
+                    on about 40+ projects local and online.
+                  </p>
+                </TimelineCardContent>
+              </TimelineCard>
+            </TimelineBlock>
 
-          <TimelineBlock>
-            <TimelineDot>
-              <h6>U</h6>
-            </TimelineDot>
-            <TimelineContent className="card timeline-content-emotion">
-              <CardContent className="card-content">
-                <TimelineTitle className="timeline-title">
-                  UI/UX Expert
-                </TimelineTitle>
-                <TimelineInfo className="timeline-info">
-                  <h6>
-                    <small>Libra IT Solutions</small>
-                  </h6>
-                  <h6>
-                    <small>Jan 2014 - Mar 2015</small>
-                  </h6>
-                </TimelineInfo>
-                <p className="description">
-                  I started my expertise carrier here, spent tow years learning
-                  and working in various UX/UI aspects. I worked on about 70+
-                  projects local and online.
-                </p>
-              </CardContent>
-            </TimelineContent>
-          </TimelineBlock>
+            <TimelineBlock>
+              <TimelineDot>
+                <h6>U</h6>
+              </TimelineDot>
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
+                  <TimelineTitle>
+                    UI/UX Expert
+                  </TimelineTitle>
+                  <TimelineInfo>
+                    <h6>
+                      <small>Libra IT Solutions</small>
+                    </h6>
+                    <h6>
+                      <small>Jan 2014 - Mar 2015</small>
+                    </h6>
+                  </TimelineInfo>
+                  <p>
+                    I started my expertise carrier here, spent tow years
+                    learning and working in various UX/UI aspects. I worked on
+                    about 70+ projects local and online.
+                  </p>
+                </TimelineCardContent>
+              </TimelineCard>
+            </TimelineBlock>
 
-          <TimelineBlock>
-            <TimelineDot>
-              <h6>S</h6>
-            </TimelineDot>
-            <TimelineContent className="card timeline-content-emotion">
-              <CardContent className="card-content">
-                <TimelineTitle className="timeline-title">
-                  Senior Developer
-                </TimelineTitle>
-                <TimelineInfo className="timeline-info">
-                  <h6>
-                    <small>WebStyle Technologies</small>
-                  </h6>
-                  <h6>
-                    <small>Jan 2016 - Continue..</small>
-                  </h6>
-                </TimelineInfo>
-                <p className="description">
-                  I recently joined here, currently working on various
-                  development aspects. I already worked on about..
-                </p>
-                <ModalDot
-                  href="#"
-                  className="modal-dot"
-                  data-toggle="modal"
-                  data-target="#myModal-5"
-                >
-                  <i className="fa fa-ellipsis-h" aria-hidden="true" />
-                </ModalDot>
-              </CardContent>
-            </TimelineContent>
-          </TimelineBlock>
-        </Experience>
-      </Container>
-    </section>
+            <TimelineBlock>
+              <TimelineDot>
+                <h6>S</h6>
+              </TimelineDot>
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
+                  <TimelineTitle>
+                    Senior Developer
+                  </TimelineTitle>
+                  <TimelineInfo>
+                    <h6>
+                      <small>WebStyle Technologies</small>
+                    </h6>
+                    <h6>
+                      <small>Jan 2016 - Continue..</small>
+                    </h6>
+                  </TimelineInfo>
+                  <p>
+                    I recently joined here, currently working on various
+                    development aspects. I already worked on about..
+                  </p>
+                  <ModalDot
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#myModal-5"
+                  >
+                    <i className="fa fa-ellipsis-h" aria-hidden="true" />
+                  </ModalDot>
+                </TimelineCardContent>
+              </TimelineCard>
+            </TimelineBlock>
+          </Experience>
+        </Container>
+      </Section>
+    </Zoom>
   );
 };

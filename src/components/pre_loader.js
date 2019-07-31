@@ -1,6 +1,9 @@
-import React, {useEffect} from "react";
+/**@jsx jsx */
+import {useEffect} from "react";
+import {jsx, css} from "@emotion/core";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
+import {text_center} from "./common";
 
 const loader = keyframes`
     0% {
@@ -111,17 +114,21 @@ export default () => {
                 document.getElementById("loading").style.display="none";
             }, 1000);
     }, []);
-    return <Loading id="loading">
+    return (
+      <Loading id="loading">
         <LoadingCenter>
-            <LoadingCenterAbsolute>
-                <BoxHolder>
-                    <LoadBox class="load-box"><BoxInner class="box-inner"></BoxInner></LoadBox>
-                </BoxHolder>
-                <TextHolder>
-                    <h2 className="text-center">Nithin Thampi</h2>
-                    <h6>Software Engineer & UI/UX Expert</h6>
-                </TextHolder>
-            </LoadingCenterAbsolute>
+          <LoadingCenterAbsolute>
+            <BoxHolder>
+              <LoadBox>
+                <BoxInner />
+              </LoadBox>
+            </BoxHolder>
+            <TextHolder>
+              <h2 css={css`${text_center}`}>Nithin Thampi</h2>
+              <h6>Software Engineer & UI/UX Expert</h6>
+            </TextHolder>
+          </LoadingCenterAbsolute>
         </LoadingCenter>
-    </Loading>
+      </Loading>
+    );
 }

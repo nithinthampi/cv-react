@@ -1,109 +1,110 @@
-import React from "react";
+/** @jsx jsx */
 import styled from "@emotion/styled";
-import {Container} from "./common";
+import {jsx, css} from "@emotion/core";
+import Zoom from "react-reveal/Zoom";
+import { Container,Card, Section, SectionTitle, text_uppercase, text_center, CardContent } from "./common";
 
-const Education =  styled.div`
-    position: relative; 
+const Education = styled.div`
+  position: relative;
+  :before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 23px;
+    left: 50%;
+    height: 99.5%;
+    width: 4px;
+    opacity: 0.3;
+    background: #06a763;
+  }
+  @media only screen and (min-width: 768px) {
     :before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 23px;
-        left: 50%;
-        height: 99.5%;
-        width: 4px;
-        opacity: 0.3;
-        background: #06A763;
+      left: 50%;
+      margin-left: -2px;
+      height: 77.1%;
+      opacity: 0.4;
+      background: #06a763;
     }
-    @media only screen and (min-width: 768px) {
-        :before {
-            left: 50%;
-            margin-left: -2px;
-            height: 77.1%;
-            opacity: 0.4;
-            background: #06A763;
-        }
-    }
-
+  }
 `;
 
-const TimelineContent =  styled.div`
-    position: relative;
-    background: #fff;
-    margin-right: 0;
-    z-index: 1;
-    margin-bottom: 5px;
-    border-left: 5px solid #1976D2;
+const TimelineCard = styled(Card)`
+  position: relative;
+  background: #fff;
+  margin-right: 0;
+  z-index: 1;
+  margin-bottom: 5px;
+  border-left: 5px solid #1976d2;
+  :before {
+    content: "";
+    width: 58px;
+    height: 4px;
+    position: absolute;
+    top: 26px;
+    left: 100%;
+    z-index: -2;
+    opacity: 0.4;
+    background: #06a763;
+  }
+  :after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  @media screen and (max-width: 768px) {
     :before {
-        content: '';
-        width: 58px;
-        height: 4px;
-        position: absolute;
-        top: 26px;
-        left: 100%;
-        z-index: -2;
-        opacity: 0.4;
-        background: #06A763;
-    };
-    :after {
-        clear: both;
-        content: "";
-        display: table;
+      display: none;
     }
-    @media screen and (max-width: 768px) {
-        :before {
-            display: none;
-        }
-    }
-    @media only screen and (min-width: 768px) {
-            margin: 0;
-            width: 44%; 
-    }
+  }
+  @media only screen and (min-width: 768px) {
+    margin: 0;
+    width: 44%;
+  }
 `;
 
-const TimeLineBlock =  styled.div`
-    position: relative; 
-    :after {
-        /*timeline block after*/
-        clear: both;
-        content: "";
-        display: table; 
-    };
-    :first-child {
-        margin-top: 0; 
-    };
-    :last-child {
-        margin-bottom: 0; 
+const TimeLineBlock = styled.div`
+  position: relative;
+  :after {
+    /*timeline block after*/
+    clear: both;
+    content: "";
+    display: table;
+  }
+  :first-child {
+    margin-top: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
+  @media only screen and (min-width: 768px) {
+    margin: -5em 0;
+    :nth-child(even) .timeline-content-emotion {
+      float: right;
     }
-    @media only screen and (min-width: 768px) {
-        margin: -5em 0;
-        :nth-child(even) .timeline-content-emotion {
-            float: right;
-        }
-        :nth-child(even) .timeline-content-emotion:before {
-            top: 25px;
-            left: auto;
-            right: 101.2%;
-            z-index: -2;
-        }
-        
-    };
-`
+    :nth-child(even) .timeline-content-emotion:before {
+      top: 25px;
+      left: auto;
+      right: 101.2%;
+      z-index: -2;
+    }
+  }
+`;
 
-const CardContent =  styled.div`
-    padding: 20px;
-    p.description {
-        margin-top: 13px;
-        text-align: left; 
-    }
-`
+const TimelineCardContent = styled(CardContent)`
+  padding: 20px;
+  p {
+    margin-top: 13px;
+    text-align: left;
+  }
+`;
 
 const ModalDot = styled.a`
-    outline: 0;
-    font-size: 20px;
-    :hover, focus {
-        color: #12579b; 
-    }
+  outline: 0;
+  font-size: 20px;
+  :hover,
+  focus {
+    color: #12579b;
+  }
 `;
 
 const TimelineDot = styled.div`
@@ -144,48 +145,45 @@ const TimelineDot = styled.div`
     }
 
 }
-`
+`;
 
-
-const TimelineTitle =  styled.h6`
-    max-width: 84%;
-    font-weight: normal;
-    @media only screen and (min-width: 768px) {
-        max-width: 100%;
-    }
+const TimelineTitle = styled.h6`
+  max-width: 84%;
+  font-weight: normal;
+  @media only screen and (min-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const TimelineInfo = styled.div`
-    h6 {
-        line-height: 12px;
-        small {
-            color: inherit;
-        }
-    };
-
-`
-
+  h6 {
+    line-height: 12px;
+    small {
+      color: inherit;
+    }
+  }
+`;
 
 export default () => {
-    return (
-      <section id="education" className="section">
+  return (
+    <Zoom>
+      <Section id="education">
         <Container>
-          <div className="section-title">
-            <h4 className="text-uppercase text-center">
+          <SectionTitle>
+            <h4 css={css`${text_uppercase} ${text_center}`}>
               <img src="images/icons/book.png" alt="demo" />
               Education
             </h4>
-          </div>
-
+          </SectionTitle>
           <Education>
             <TimeLineBlock>
               <TimelineDot>
                 <h6>P</h6>
               </TimelineDot>
-              <TimelineContent className="card timeline-content-emotion">
-                <CardContent className="card-content">
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
                   <TimelineTitle>Preparatory Education</TimelineTitle>
-                  <TimelineInfo className="timeline-info">
+                  <TimelineInfo>
                     <h6>
                       <small>Fedrick School</small>
                     </h6>
@@ -193,10 +191,10 @@ export default () => {
                       <small>Jan 1997 - Mar 2000</small>
                     </h6>
                   </TimelineInfo>
-                  <p className="description">
-                    I completed my preparatory education from this
-                    prestigious institution. I successful completed all the
-                    credits without any fallout and got A grade overall.
+                  <p>
+                    I completed my preparatory education from this prestigious
+                    institution. I successful completed all the credits without
+                    any fallout and got A grade overall.
                   </p>
                   <ModalDot
                     href="#"
@@ -205,16 +203,15 @@ export default () => {
                   >
                     <i className="fa fa-ellipsis-h" aria-hidden="true" />
                   </ModalDot>
-                </CardContent>
-              </TimelineContent>
+                </TimelineCardContent>
+              </TimelineCard>
             </TimeLineBlock>
-
             <TimeLineBlock>
               <TimelineDot>
                 <h6>H</h6>
               </TimelineDot>
-              <TimelineContent className="card timeline-content-emotion">
-                <CardContent>
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
                   <TimelineTitle>High School</TimelineTitle>
                   <TimelineInfo>
                     <h6>
@@ -224,21 +221,20 @@ export default () => {
                       <small>Jan 2000 - Mar 2005</small>
                     </h6>
                   </TimelineInfo>
-                  <p className="description">
+                  <p>
                     I completed my high school degree from this prestigious
-                    institution. I successful completed all the credits
-                    without any fallout and got A grade overall.
+                    institution. I successful completed all the credits without
+                    any fallout and got A grade overall.
                   </p>
-                </CardContent>
-              </TimelineContent>
+                </TimelineCardContent>
+              </TimelineCard>
             </TimeLineBlock>
-
             <TimeLineBlock>
               <TimelineDot>
                 <h6>C</h6>
               </TimelineDot>
-              <TimelineContent className="card timeline-content-emotion">
-                <CardContent>
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
                   <TimelineTitle>Computer Science</TimelineTitle>
                   <TimelineInfo>
                     <h6>
@@ -248,21 +244,20 @@ export default () => {
                       <small>Jan 2006 - Mar 2008</small>
                     </h6>
                   </TimelineInfo>
-                  <p className="description">
-                    I completed my computer science degree from this
-                    prestigious institution. I successful completed all the
-                    credits without any fallout and got A grade overall.
+                  <p>
+                    I completed my computer science degree from this prestigious
+                    institution. I successful completed all the credits without
+                    any fallout and got A grade overall.
                   </p>
-                </CardContent>
-              </TimelineContent>
+                </TimelineCardContent>
+              </TimelineCard>
             </TimeLineBlock>
-
             <TimeLineBlock>
               <TimelineDot>
                 <i className="fa fa-graduation-cap" />
               </TimelineDot>
-              <TimelineContent className="card timeline-content-emotion">
-                <CardContent>
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
                   <TimelineTitle>Software Engineering</TimelineTitle>
                   <TimelineInfo>
                     <h6>
@@ -272,20 +267,20 @@ export default () => {
                       <small>Jan 2009 - Mar 2010</small>
                     </h6>
                   </TimelineInfo>
-                  <p className="description">
-                    I completed this degree from this prestigious
-                    institution. I successful completed all the credits
-                    without any fallout and got A grade overall.
+                  <p>
+                    I completed this degree from this prestigious institution. I
+                    successful completed all the credits without any fallout and
+                    got A grade overall.
                   </p>
-                </CardContent>
-              </TimelineContent>
+                </TimelineCardContent>
+              </TimelineCard>
             </TimeLineBlock>
             <TimeLineBlock>
               <TimelineDot>
                 <h6>U</h6>
               </TimelineDot>
-              <TimelineContent className="card timeline-content-emotion">
-                <CardContent>
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
                   <TimelineTitle>UI/UX Workshop</TimelineTitle>
                   <TimelineInfo>
                     <h6>
@@ -295,27 +290,23 @@ export default () => {
                       <small>Jan 2010 - Mar 2011</small>
                     </h6>
                   </TimelineInfo>
-                  <p className="description">
-                    I completed this course from this prestigious
-                    institution. I successful completed all the credits
-                    without any fallout and got A grade overall.
+                  <p>
+                    I completed this course from this prestigious institution. I
+                    successful completed all the credits without any fallout and
+                    got A grade overall.
                   </p>
-                  <a
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#myModal-2"
-                  >
+                  <a href="#" data-toggle="modal" data-target="#myModal-2">
                     <i className="fa fa-ellipsis-h" aria-hidden="true" />
                   </a>
-                </CardContent>
-              </TimelineContent>
+                </TimelineCardContent>
+              </TimelineCard>
             </TimeLineBlock>
             <TimeLineBlock>
               <TimelineDot>
                 <i className="fa fa-globe" />
               </TimelineDot>
-              <TimelineContent className="card timeline-content-emotion">
-                <CardContent>
+              <TimelineCard className="timeline-content-emotion">
+                <TimelineCardContent>
                   <TimelineTitle>Web Development</TimelineTitle>
                   <TimelineInfo>
                     <h6>
@@ -325,23 +316,20 @@ export default () => {
                       <small>Jan 2011 - Mar 2012</small>
                     </h6>
                   </TimelineInfo>
-                  <p className="description">
-                    I completed this course from this prestigious
-                    institution. I successful completed all the credits
-                    without any fallout and got A grade overall.
+                  <p>
+                    I completed this course from this prestigious institution. I
+                    successful completed all the credits without any fallout and
+                    got A grade overall.
                   </p>
-                  <a
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#myModal-3"
-                  >
+                  <a href="#" data-toggle="modal" data-target="#myModal-3">
                     <i className="fa fa-ellipsis-h" aria-hidden="true" />
                   </a>
-                </CardContent>
-              </TimelineContent>
+                </TimelineCardContent>
+              </TimelineCard>
             </TimeLineBlock>
           </Education>
         </Container>
-      </section>
-    );
-}
+      </Section>
+    </Zoom>
+  );
+};

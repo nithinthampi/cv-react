@@ -1,8 +1,11 @@
-import React from "react";
+/** @jsx jsx */
+import {css, jsx} from "@emotion/core";
 import styled from "@emotion/styled";
-import {Container, Row} from "./common"
+import Zoom from "react-reveal/Zoom";
+import Col from "react-bootstrap/lib/Col";
+import {Container, Row, Section, SectionTitle, Card, CardContent, text_center, text_uppercase} from "./common"
 
-const SkillsCard = styled.div`
+const SkillsCard = styled(Card)`
   background: #06a763;
 `;
 
@@ -60,126 +63,146 @@ const SkillBarPercent = styled.div`
 
 export default () => {
   return (
-    <section id="skills" className="section">
-      <Container>
-        <div className="section-title">
-          <h4 className="text-uppercase text-center">
-            <img src="images/icons/mixer.png" alt="demo" />
-            Skills
-          </h4>
-        </div>
-        <Row>
-          <div className="col-md-12 col-sm-12 col-xs-12">
-            <SkillsCard id="skills-card" className="card">
-              <div className="card-content">
-                <Row>
-                  <div className="col-md-4 col-sm-4 col-xs-12">
-                    <SkillsTitle className="skills-title">
-                      <h6 className="text-center">Professional</h6>
-                    </SkillsTitle>
-                    <SkillBar className="skillbar" data-percent="90%">
-                      <SkillBarTitle>
-                        <span>HTML5</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>90%</SkillBarPercent>
-                    </SkillBar>
-                    <SkillBar data-percent="90%">
-                      <SkillBarTitle>
-                        <span>CSS3</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>90%</SkillBarPercent>
-                    </SkillBar>
-                    <SkillBar data-percent="70%">
-                      <SkillBarTitle>
-                        <span>jQuery</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>70%</SkillBarPercent>
-                    </SkillBar>
-                    <SkillBar data-percent="68%">
-                      <SkillBarTitle>
-                        <span>PHP</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>68%</SkillBarPercent>
-                    </SkillBar>
-                  </div>
+    <Zoom>
+      <Section id="skills">
+        <Container>
+          <SectionTitle>
+            <h4 css={css`${text_uppercase}${text_center} `}>
+              <img src="images/icons/mixer.png" alt="demo" />
+              Skills
+            </h4>
+          </SectionTitle>
+          <Row>
+            <Col xs={12}>
+              <SkillsCard id="skills-card">
+                <CardContent>
+                  <Row>
+                    <Col xs={12} sm={4} md={4}>
+                      <SkillsTitle>
+                        <h6
+                          css={css`
+                            ${text_center}
+                          `}
+                        >
+                          Professional
+                        </h6>
+                      </SkillsTitle>
+                      <SkillBar data-percent="90%">
+                        <SkillBarTitle>
+                          <span>HTML5</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>90%</SkillBarPercent>
+                      </SkillBar>
+                      <SkillBar data-percent="90%">
+                        <SkillBarTitle>
+                          <span>CSS3</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>90%</SkillBarPercent>
+                      </SkillBar>
+                      <SkillBar data-percent="70%">
+                        <SkillBarTitle>
+                          <span>jQuery</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>70%</SkillBarPercent>
+                      </SkillBar>
+                      <SkillBar data-percent="68%">
+                        <SkillBarTitle>
+                          <span>PHP</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>68%</SkillBarPercent>
+                      </SkillBar>
+                    </Col>
 
-                  <div className="col-md-4 col-sm-4 col-xs-12">
-                    <SkillsTitle>
-                      <h6 className="text-center">Personal</h6>
-                    </SkillsTitle>
-                    <SkillBar data-percent="80%">
-                      <SkillBarTitle>
-                        <span>Communication</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>80%</SkillBarPercent>
-                    </SkillBar>
-                    <SkillBar data-percent="60%">
-                      <SkillBarTitle>
-                        <span>Teamwork</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>60%</SkillBarPercent>
-                    </SkillBar>
-                    <SkillBar data-percent="70%">
-                      <SkillBarTitle>
-                        <span>Creativity</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>70%</SkillBarPercent>
-                    </SkillBar>
-                    <SkillBar data-percent="70%">
-                      <SkillBarTitle>
-                        <span>Dedication</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>70%</SkillBarPercent>
-                    </SkillBar>
-                  </div>
+                    <Col xs={12} sm={4} md={4}>
+                      <SkillsTitle>
+                        <h6
+                          css={css`
+                            ${text_center}
+                          `}
+                        >
+                          Personal
+                        </h6>
+                      </SkillsTitle>
+                      <SkillBar data-percent="80%">
+                        <SkillBarTitle>
+                          <span>Communication</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>80%</SkillBarPercent>
+                      </SkillBar>
+                      <SkillBar data-percent="60%">
+                        <SkillBarTitle>
+                          <span>Teamwork</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>60%</SkillBarPercent>
+                      </SkillBar>
+                      <SkillBar data-percent="70%">
+                        <SkillBarTitle>
+                          <span>Creativity</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>70%</SkillBarPercent>
+                      </SkillBar>
+                      <SkillBar data-percent="70%">
+                        <SkillBarTitle>
+                          <span>Dedication</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>70%</SkillBarPercent>
+                      </SkillBar>
+                    </Col>
 
-                  <div className="col-md-4 col-sm-4 col-xs-12">
-                    <SkillsTitle>
-                      <h6 className="text-center">Software</h6>
-                    </SkillsTitle>
-                    <SkillBar data-percent="80%">
-                      <SkillBarTitle>
-                        <span>Adobe Illustrator</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>80%</SkillBarPercent>
-                    </SkillBar>
-                    <SkillBar data-percent="70%">
-                      <SkillBarTitle>
-                        <span>Adobe InDesign</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>70%</SkillBarPercent>
-                    </SkillBar>
-                    <SkillBar data-percent="60%">
-                      <SkillBarTitle>
-                        <span>PHP Storm</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>60%</SkillBarPercent>
-                    </SkillBar>
-                    <SkillBar data-percent="80%">
-                      <SkillBarTitle>
-                        <span>Dev Console</span>
-                      </SkillBarTitle>
-                      <SkillBarBar />
-                      <SkillBarPercent>80%</SkillBarPercent>
-                    </SkillBar>
-                  </div>
-                </Row>
-              </div>
-            </SkillsCard>
-          </div>
-        </Row>
-      </Container>
-    </section>
+                    <Col xs={12} sm={4} md={4}>
+                      <SkillsTitle>
+                        <h6
+                          css={css`
+                            ${text_center}
+                          `}
+                        >
+                          Software
+                        </h6>
+                      </SkillsTitle>
+                      <SkillBar data-percent="80%">
+                        <SkillBarTitle>
+                          <span>Adobe Illustrator</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>80%</SkillBarPercent>
+                      </SkillBar>
+                      <SkillBar data-percent="70%">
+                        <SkillBarTitle>
+                          <span>Adobe InDesign</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>70%</SkillBarPercent>
+                      </SkillBar>
+                      <SkillBar data-percent="60%">
+                        <SkillBarTitle>
+                          <span>PHP Storm</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>60%</SkillBarPercent>
+                      </SkillBar>
+                      <SkillBar data-percent="80%">
+                        <SkillBarTitle>
+                          <span>Dev Console</span>
+                        </SkillBarTitle>
+                        <SkillBarBar />
+                        <SkillBarPercent>80%</SkillBarPercent>
+                      </SkillBar>
+                    </Col>
+                  </Row>
+                </CardContent>
+              </SkillsCard>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
+    </Zoom>
   );
 };
