@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import {jsx, css} from "@emotion/core";
+import {useState} from "react";
 import styled from "@emotion/styled";
 import Zoom from "react-reveal/Zoom";
 import Col from "react-bootstrap/lib/Col";
@@ -13,9 +14,13 @@ const InputFieldWrapper = styled.div`
   label {
     left: 0;
     font-weight: normal;
-    top: 0.5rem;
+    top: ${({ fieldKey, activeField }) => {
+      console.log(fieldKey, activeField);
+      return activeField === fieldKey ? "-1.5rem" : "0.5rem";
+    }};
     position: absolute;
     font-size: 1rem;
+    transition: all 0.5s;
   }
   input {
     background-color: transparent;
@@ -83,54 +88,62 @@ const Indeterminate = styled.div`
 
 
 export default () => {
+
+  const [activeField, setActiveField] =  useState();
     return (
       <Zoom>
-        <Section id="contact" >
+        <Section id="contact">
           <Container>
             <SectionTitle>
-              <h4 css={css`${text_uppercase} ${text_center}`}>
+              <h4
+                css={css`
+                  ${text_uppercase} ${text_center}
+                `}
+              >
                 <img src="images/icons/envelope.png" alt="demo" />
                 Contact
               </h4>
             </SectionTitle>
             <Row>
-              <Col xs={12} sm={12} md={5}
-                id="contact-card"
-              >
+              <Col xs={12} sm={12} md={5} id="contact-card">
                 <Card>
                   <CardContent>
                     <form id="contact-form" name="c-form">
-                      <InputFieldWrapper>
+                      <InputFieldWrapper fieldKey="first_name" activeField={activeField}>
                         <input
                           id="first_name"
                           type="text"
                           name="first_name"
+                          onFocus={() => setActiveField("first_name")}
                           required
                         />
                         <label for="first_name">Name</label>
                       </InputFieldWrapper>
-                      <InputFieldWrapper>
+                      <InputFieldWrapper fieldKey="subject" activeField={activeField}>
                         <input
                           id="sub"
                           type="text"
                           name="sub"
+                          onFocus={() => setActiveField("subject")}
                         />
                         <label for="sub">Subject</label>
                       </InputFieldWrapper>
-                      <InputFieldWrapper>
+                      <InputFieldWrapper fieldKey="email" activeField={activeField}>
                         <input
                           id="email"
                           type="email"
                           name="email"
+                          onFocus={() => setActiveField("email")}
                           required
                         />
                         <label for="email">Email</label>
                       </InputFieldWrapper>
-                      <InputFieldWrapper>
+                      <InputFieldWrapper fieldKey="message" activeField={activeField}>
                         <TextArea
                           id="textarea1"
                           className="materialize-textarea"
                           name="message"
+                          onFocus={() => setActiveField("message")}
                           required
                         />
                         <label for="textarea1">Message</label>
