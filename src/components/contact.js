@@ -4,6 +4,7 @@ import {useState} from "react";
 import styled from "@emotion/styled";
 import Zoom from "react-reveal/Zoom";
 import Col from "react-bootstrap/lib/Col";
+import GoogleMapReact from "google-map-react";
 import {Row, Section, Container, SectionTitle, Card, CardContent, text_uppercase, text_center} from "./common";
 
 
@@ -86,6 +87,16 @@ const Indeterminate = styled.div`
     min-height: 5rem;
 `;
 
+const Marker = styled.div`
+  color: white;
+  background: #06a763;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+`;
+
 
 export default () => {
 
@@ -109,7 +120,10 @@ export default () => {
                 <Card>
                   <CardContent>
                     <form id="contact-form" name="c-form">
-                      <InputFieldWrapper fieldKey="first_name" activeField={activeField}>
+                      <InputFieldWrapper
+                        fieldKey="first_name"
+                        activeField={activeField}
+                      >
                         <input
                           id="first_name"
                           type="text"
@@ -119,7 +133,10 @@ export default () => {
                         />
                         <label for="first_name">Name</label>
                       </InputFieldWrapper>
-                      <InputFieldWrapper fieldKey="subject" activeField={activeField}>
+                      <InputFieldWrapper
+                        fieldKey="subject"
+                        activeField={activeField}
+                      >
                         <input
                           id="sub"
                           type="text"
@@ -128,7 +145,10 @@ export default () => {
                         />
                         <label for="sub">Subject</label>
                       </InputFieldWrapper>
-                      <InputFieldWrapper fieldKey="email" activeField={activeField}>
+                      <InputFieldWrapper
+                        fieldKey="email"
+                        activeField={activeField}
+                      >
                         <input
                           id="email"
                           type="email"
@@ -138,7 +158,10 @@ export default () => {
                         />
                         <label for="email">Email</label>
                       </InputFieldWrapper>
-                      <InputFieldWrapper fieldKey="message" activeField={activeField}>
+                      <InputFieldWrapper
+                        fieldKey="message"
+                        activeField={activeField}
+                      >
                         <TextArea
                           id="textarea1"
                           className="materialize-textarea"
@@ -168,9 +191,21 @@ export default () => {
               </Col>
 
               <Col xs={12} sm={12} md={7}>
-                <div id="map-card" className="card">
-                  <MyMap id="myMap" />
-                </div>
+                <Card id="map-card">
+                  <MyMap id="myMap">
+                    <GoogleMapReact
+                      bootstrapURLKeys={{
+                        key: "AIzaSyAOrMsWj_JlLLaSh4VOOMPTQxqr43KSMjY"
+                      }}
+                      defaultCenter={{ lat: 10.8949464, lng: 75.9260695 }}
+                      defaultZoom={11}
+                    >
+                      <Marker>
+                        NT
+                      </Marker>
+                    </GoogleMapReact>
+                  </MyMap>
+                </Card>
               </Col>
             </Row>
           </Container>

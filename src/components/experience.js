@@ -3,6 +3,7 @@ import {css, jsx} from "@emotion/core";
 import styled from "@emotion/styled";
 import Zoom from "react-reveal/Zoom";
 import {Container, Section, SectionTitle, Card, CardContent, text_uppercase, text_center} from "./common";
+import resume from "../data/resume.json";
 
 const Experience = styled.div`
   position: relative;
@@ -166,7 +167,6 @@ const TimelineInfo = styled.div`
 
 export default () => {
   return (
-    <Zoom>
       <Section id="experience">
         <Container>
           <SectionTitle>
@@ -177,124 +177,47 @@ export default () => {
           </SectionTitle>
 
           <Experience>
-            <TimelineBlock>
-              <TimelineDot>
-                <h6>D</h6>
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>
-                    Designer
-                  </TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>RulerSoft</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 2010 - Mar 2012</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I started my designing carrier here, spent tow years
-                    learning and working in various designing aspects..
-                  </p>
-                  <ModalDot
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#myModal-4"
-                  >
-                    <i className="fa fa-ellipsis-h" aria-hidden="true" />
-                  </ModalDot>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimelineBlock>
-
-            <TimelineBlock>
-              <TimelineDot>
-                <h6>F</h6>
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>
-                    Frontend Developer
-                  </TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>Micro IT</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 2012 - Mar 2014</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I started my frontend carrier here, spent tow years
-                    learning and working in various frontend aspects. I worked
-                    on about 40+ projects local and online.
-                  </p>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimelineBlock>
-
-            <TimelineBlock>
-              <TimelineDot>
-                <h6>U</h6>
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>
-                    UI/UX Expert
-                  </TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>Libra IT Solutions</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 2014 - Mar 2015</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I started my expertise carrier here, spent tow years
-                    learning and working in various UX/UI aspects. I worked on
-                    about 70+ projects local and online.
-                  </p>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimelineBlock>
-
-            <TimelineBlock>
-              <TimelineDot>
-                <h6>S</h6>
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>
-                    Senior Developer
-                  </TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>WebStyle Technologies</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 2016 - Continue..</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I recently joined here, currently working on various
-                    development aspects. I already worked on about..
-                  </p>
-                  <ModalDot
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#myModal-5"
-                  >
-                    <i className="fa fa-ellipsis-h" aria-hidden="true" />
-                  </ModalDot>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimelineBlock>
+            {
+              resume.experience.map((timeline) => {
+                return (
+                  <TimelineBlock>
+                      <TimelineDot>
+                        <h6>D</h6>
+                      </TimelineDot>
+                    <Zoom>
+                      <TimelineCard className="timeline-content-emotion">
+                        <TimelineCardContent>
+                          <TimelineTitle>
+                            {timeline.title}
+                          </TimelineTitle>
+                          <TimelineInfo>
+                            <h6>
+                              <small>{timeline.instite}</small>
+                            </h6>
+                            <h6>
+                              <small>{timeline.year}</small>
+                            </h6>
+                          </TimelineInfo>
+                          <p>{timeline.shortDesc}</p>
+                          <ModalDot
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#myModal-4"
+                          >
+                            <i
+                              className="fa fa-ellipsis-h"
+                              aria-hidden="true"
+                            />
+                          </ModalDot>
+                        </TimelineCardContent>
+                      </TimelineCard>
+                    </Zoom>
+                  </TimelineBlock>
+                );
+              })
+            }
           </Experience>
         </Container>
       </Section>
-    </Zoom>
   );
 };

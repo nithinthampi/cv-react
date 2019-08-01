@@ -1,0 +1,118 @@
+{
+    "name": "Nithin Thampi",
+    "title": "Software Engineer",
+    "basic": {
+        "title": "Software Engineer",
+        "email": "nithin.thampi87@gmail.com",
+        "website": "nithinthampi.in",
+        "skype": "nithinthampi@skype.com",
+        "phone": "+91 7829387027",
+        "address": "Bangalore, Karnataka, India"
+    },
+    "about": {
+        "description": "Hello! I’m Nithin Thampi. Senior Web Developer with over 13 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java, JavaScript, JQuery, Angular JS. Strong background in management and leadership.",
+        "resumeUrl": "http://nithin.thampi.in/resume"
+    },
+    "education": [
+        {
+            "title": "Secondary Education",
+            "institute": "MES Central School, Tirur",
+            "year": "May 2002 - March 2003",
+            "shortDesc": "I completed my preparatory education from this prestigious institution. I successful completed all the credits without any fallout and got A grade overall.",
+            "longDesc": "Hello! I’m Nithin Thampi. Senior Web Developer with over 13 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java, JavaScript, JQuery, Angular JS. Strong background in management and leadership."
+        },
+        {
+            "title": "Higher Secondary Education",
+            "institute": "MES Central School, Tirur",
+            "year": "May 2004 - March 2005",
+            "shortDesc": "I completed my preparatory education from this prestigious institution. I successful completed all the credits without any fallout and got A grade overall.",
+            "longDesc": "Hello! I’m Nithin Thampi. Senior Web Developer with over 13 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java, JavaScript, JQuery, Angular JS. Strong background in management and leadership."
+        },
+        {
+            "title": "BTech",
+            "institute": "Cochin Insitute of Science And Technology",
+            "year": "May 2005 - March 2009",
+            "shortDesc": "I completed my preparatory education from this prestigious institution. I successful completed all the credits without any fallout and got A grade overall.",
+            "longDesc": "Hello! I’m Nithin Thampi. Senior Web Developer with over 13 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java, JavaScript, JQuery, Angular JS. Strong background in management and leadership."
+        }
+    ],
+    "experience": [
+        {
+            "title": "Secondary Education",
+            "institute": "MES Central School, Tirur",
+            "year": "May 2002 - March 2003",
+            "shortDesc": "I completed my preparatory education from this prestigious institution. I successful completed all the credits without any fallout and got A grade overall.",
+            "longDesc": "Hello! I’m Nithin Thampi. Senior Web Developer with over 13 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java, JavaScript, JQuery, Angular JS. Strong background in management and leadership."
+        },
+        {
+            "title": "Higher Secondary Education",
+            "institute": "MES Central School, Tirur",
+            "year": "May 2004 - March 2005",
+            "shortDesc": "I completed my preparatory education from this prestigious institution. I successful completed all the credits without any fallout and got A grade overall.",
+            "longDesc": "Hello! I’m Nithin Thampi. Senior Web Developer with over 13 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java, JavaScript, JQuery, Angular JS. Strong background in management and leadership."
+        },
+        {
+            "title": "BTech",
+            "institute": "Cochin Insitute of Science And Technology",
+            "year": "May 2005 - March 2009",
+            "shortDesc": "I completed my preparatory education from this prestigious institution. I successful completed all the credits without any fallout and got A grade overall.",
+            "longDesc": "Hello! I’m Nithin Thampi. Senior Web Developer with over 13 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java, JavaScript, JQuery, Angular JS. Strong background in management and leadership."
+        }
+    ],
+    "skills": {
+        "Professional" : [
+            {
+                "name": "HTML5",
+                "rating": 90 
+            },
+            {
+                "name": "CSS3",
+                "rating": 80
+            },
+            {
+                "name": "jQuery",
+                "rating": 60
+            },
+            {
+                "name": "ES6",
+                "rating": 68
+            }
+        ],
+        "Personal": [
+            {
+                "name": "Communication",
+                "rating": 90
+            },
+            {
+                "name": "Teamwork",
+                "rating": 80
+            },
+            {
+                "name": "Creativity",
+                "rating": 60
+            },
+            {
+                "name": "Dedication",
+                "rating": 68
+            }
+        ],
+        "Software": [
+            {
+                "name": "VSCode",
+                "rating": 90
+            },
+            {
+                "name": "Atom",
+                "rating": 80
+            },
+            {
+                "name": "Brackets",
+                "rating": 60
+            },
+            {
+                "name": "Adobe InDesign",
+                "rating": 68
+            }
+        ]
+    }
+}

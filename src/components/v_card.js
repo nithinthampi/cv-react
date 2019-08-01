@@ -5,6 +5,7 @@ import Zoom from "react-reveal/Zoom";
 import Col from "react-bootstrap/lib/Col";
 import MaterialIcon from "@material-ui/core/Icon";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import resume from "../data/resume.json";
 import {
   faFacebookF,
   faLinkedinIn,
@@ -245,9 +246,9 @@ export default () => {
 
                 <CardContent>
                   <Headings>
-                    <h4 css={css`${text_uppercase}${left}`}>Nithin Thampi</h4>
+                    <h4 css={css`${text_uppercase}${left}`}>{resume.name}</h4>
                     <h6 css={css`${text_capitalize}${left}`}>
-                      Software Engineer
+                      {resume.basic.title}
                     </h6>
                   </Headings>
 
@@ -257,31 +258,31 @@ export default () => {
                         <Title>
                           <MaterialIcon>email</MaterialIcon>
                         </Title>
-                        <Content>nithin.thampi87@gmail.com</Content>
+                        <Content>{resume.basic.email}</Content>
                       </li>
                       <li css={clearfix}>
                         <Title>
                           <MaterialIcon>language</MaterialIcon>
                         </Title>
-                        <Content>nithinthampi.me</Content>
+                        <Content>{resume.basic.website}</Content>
                       </li>
                       <li css={clearfix}>
                         <Title>
                           <Icon icon={faSkype} aria-hidden="true" />
                         </Title>
-                        <Content>yourusername@skype.com</Content>
+                        <Content>{resume.basic.skype}</Content>
                       </li>
                       <li css={clearfix}>
                         <Title>
                           <MaterialIcon>phone</MaterialIcon>
                         </Title>
-                        <Content>+91 7829 387 027</Content>
+                        <Content>{resume.basic.phone}</Content>
                       </li>
                       <li css={clearfix}>
                         <Title>
                           <MaterialIcon>place</MaterialIcon>
                         </Title>
-                        <Content>Bangalore, Karnataka, India</Content>
+                        <Content>{resume.basic.address}</Content>
                       </li>
                     </ProfileList>
                   </Infos>

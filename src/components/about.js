@@ -4,6 +4,7 @@ import {Container, Row, Section, Card, CardContent} from "./common";
 import Col from "react-bootstrap/lib/Col";
 import Button from "react-bootstrap/lib/Button";
 import Zoom from "react-reveal/Zoom";
+import resume from "../data/resume.json";
 
 const About = styled(Section)`
   transition: all 1s;
@@ -46,13 +47,7 @@ export default () => {
             <Card id="about-card">
               <CardContent>
                 <p>
-                  Hello! I’m Nithin Thampi. Senior Web Developer with over 13 years
-                  of experience specializing in front end development.
-                  Experienced with all stages of the development cycle for
-                  dynamic web projects.Having an in-depth knowledge including
-                  advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java,
-                  JavaScript, JQuery, Angular JS. Strong background in
-                  management and leadership.
+                  {resume.about.description}
                 </p>
               </CardContent>
               <Actions id="about-btn">

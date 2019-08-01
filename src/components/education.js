@@ -1,8 +1,18 @@
 /** @jsx jsx */
 import styled from "@emotion/styled";
-import {jsx, css} from "@emotion/core";
+import { jsx, css } from "@emotion/core";
 import Zoom from "react-reveal/Zoom";
-import { Container,Card, Section, SectionTitle, text_uppercase, text_center, CardContent } from "./common";
+import {
+  Container,
+  Card,
+  Section,
+  SectionTitle,
+  text_uppercase,
+  text_center,
+  CardContent
+} from "./common";
+import Modal from "./common/modal";
+import resume from "../data/resume.json";
 
 const Education = styled.div`
   position: relative;
@@ -98,15 +108,6 @@ const TimelineCardContent = styled(CardContent)`
   }
 `;
 
-const ModalDot = styled.a`
-  outline: 0;
-  font-size: 20px;
-  :hover,
-  focus {
-    color: #12579b;
-  }
-`;
-
 const TimelineDot = styled.div`
     background: #06A763;
     width: 50px;
@@ -166,170 +167,47 @@ const TimelineInfo = styled.div`
 
 export default () => {
   return (
-    <Zoom>
-      <Section id="education">
-        <Container>
-          <SectionTitle>
-            <h4 css={css`${text_uppercase} ${text_center}`}>
-              <img src="images/icons/book.png" alt="demo" />
-              Education
-            </h4>
-          </SectionTitle>
-          <Education>
-            <TimeLineBlock>
-              <TimelineDot>
-                <h6>P</h6>
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>Preparatory Education</TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>Fedrick School</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 1997 - Mar 2000</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I completed my preparatory education from this prestigious
-                    institution. I successful completed all the credits without
-                    any fallout and got A grade overall.
-                  </p>
-                  <ModalDot
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#myModal-1"
-                  >
-                    <i className="fa fa-ellipsis-h" aria-hidden="true" />
-                  </ModalDot>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimeLineBlock>
-            <TimeLineBlock>
-              <TimelineDot>
-                <h6>H</h6>
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>High School</TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>RedStreet College</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 2000 - Mar 2005</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I completed my high school degree from this prestigious
-                    institution. I successful completed all the credits without
-                    any fallout and got A grade overall.
-                  </p>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimeLineBlock>
-            <TimeLineBlock>
-              <TimelineDot>
-                <h6>C</h6>
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>Computer Science</TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>Down Street College</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 2006 - Mar 2008</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I completed my computer science degree from this prestigious
-                    institution. I successful completed all the credits without
-                    any fallout and got A grade overall.
-                  </p>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimeLineBlock>
-            <TimeLineBlock>
-              <TimelineDot>
-                <i className="fa fa-graduation-cap" />
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>Software Engineering</TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>Oxford University</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 2009 - Mar 2010</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I completed this degree from this prestigious institution. I
-                    successful completed all the credits without any fallout and
-                    got A grade overall.
-                  </p>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimeLineBlock>
-            <TimeLineBlock>
-              <TimelineDot>
-                <h6>U</h6>
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>UI/UX Workshop</TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>IT Next Academy</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 2010 - Mar 2011</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I completed this course from this prestigious institution. I
-                    successful completed all the credits without any fallout and
-                    got A grade overall.
-                  </p>
-                  <a href="#" data-toggle="modal" data-target="#myModal-2">
-                    <i className="fa fa-ellipsis-h" aria-hidden="true" />
-                  </a>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimeLineBlock>
-            <TimeLineBlock>
-              <TimelineDot>
-                <i className="fa fa-globe" />
-              </TimelineDot>
-              <TimelineCard className="timeline-content-emotion">
-                <TimelineCardContent>
-                  <TimelineTitle>Web Development</TimelineTitle>
-                  <TimelineInfo>
-                    <h6>
-                      <small>Lipro University</small>
-                    </h6>
-                    <h6>
-                      <small>Jan 2011 - Mar 2012</small>
-                    </h6>
-                  </TimelineInfo>
-                  <p>
-                    I completed this course from this prestigious institution. I
-                    successful completed all the credits without any fallout and
-                    got A grade overall.
-                  </p>
-                  <a href="#" data-toggle="modal" data-target="#myModal-3">
-                    <i className="fa fa-ellipsis-h" aria-hidden="true" />
-                  </a>
-                </TimelineCardContent>
-              </TimelineCard>
-            </TimeLineBlock>
-          </Education>
-        </Container>
-      </Section>
-    </Zoom>
+    <Section id="education">
+      <Container>
+        <SectionTitle>
+          <h4
+            css={css`
+              ${text_uppercase} ${text_center}
+            `}
+          >
+            <img src="images/icons/book.png" alt="demo" />
+            Education
+          </h4>
+        </SectionTitle>
+        <Education>
+          {resume.education.map(timeline => {
+            return (
+              <TimeLineBlock>
+                <TimelineDot>
+                  <h6>{timeline.title.substring(0, 1)}</h6>
+                </TimelineDot>
+                <Zoom>
+                  <TimelineCard className="timeline-content-emotion">
+                    <TimelineCardContent>
+                      <TimelineTitle>{timeline.title}</TimelineTitle>
+                      <TimelineInfo>
+                        <h6>
+                          <small>{timeline.institute}</small>
+                        </h6>
+                        <h6>
+                          <small>{timeline.year}</small>
+                        </h6>
+                      </TimelineInfo>
+                      <p>{timeline.shortDesc}</p>
+                      {timeline.longDesc ? <Modal /> : null}
+                    </TimelineCardContent>
+                  </TimelineCard>
+                </Zoom>
+              </TimeLineBlock>
+            );
+          })}
+        </Education>
+      </Container>
+    </Section>
   );
 };

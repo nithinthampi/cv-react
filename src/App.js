@@ -7,6 +7,8 @@ import Education from "./components/education";
 import Skills from "./components/skills";
 import Experience from "./components/experience";
 import Contact from "./components/contact";
+import ScrollUp from "./components/scroll_to_top";
+import Footer from "./components/footer";
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
       <Skills /> 
       <Experience />
       <Contact />
+      <ScrollUp />
+      <Footer />
     </div>
   );
 }
