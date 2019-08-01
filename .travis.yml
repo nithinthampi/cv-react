@@ -15,5 +15,5 @@ before_install:
 deploy:
   provider: script
   skip_cleanup: true
-  script: ssh -i /tmp/LightsailDefaultKey-ap-south-1.pem bitnami@52.66.162.168 pwd
+  script: ssh -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no bitnami@52.66.162.168 pwd
 
