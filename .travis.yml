@@ -14,5 +14,6 @@ before_install:
 - ssh-add /tmp/LightsailDefaultKey-ap-south-1.pem
 deploy:
   provider: script
+  skip_cleanup: true
   script: scp -o stricthostkeychecking=no -rp ./build bitnami@52.66.162.168:~/test
 
