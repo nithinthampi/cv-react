@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import {Container, Row, Section, Card, CardContent} from "./common";
+import {Container, Row} from "./common/styles/containers";
+import {Section} from "./common/styles/sections";
+import {Card, CardContent} from "./common/styles/cards";
 import Col from "react-bootstrap/lib/Col";
 import Button from "react-bootstrap/lib/Button";
 import Zoom from "react-reveal/Zoom";

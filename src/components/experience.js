@@ -1,8 +1,11 @@
 /** @jsx jsx */
-import {css, jsx} from "@emotion/core";
+import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import Zoom from "react-reveal/Zoom";
-import {Container, Section, SectionTitle, Card, CardContent, text_uppercase, text_center} from "./common";
+import { Container } from "./common/styles/containers";
+import { Section, SectionTitle } from "./common/styles/sections";
+import { Card, CardContent } from "./common/styles/cards";
+import { text_uppercase, text_center } from "./common/styles/overrides";
 import resume from "../data/resume.json";
 
 const Experience = styled.div`
@@ -35,13 +38,13 @@ const TimelineBlock = styled.div`
     clear: both;
     content: "";
     display: table;
-  };
+  }
   :first-child {
     margin-top: 0;
   }
   :last-child {
     margin-bottom: 0;
-  };
+  }
 
   @media only screen and (min-width: 768px) {
     margin: -5em 0;
@@ -49,10 +52,10 @@ const TimelineBlock = styled.div`
       .timeline-content-emotion {
         float: right;
         :before {
-            top: 25px;
-            left: auto;
-            right: 101.2%;
-            z-index: -2;
+          top: 25px;
+          left: auto;
+          right: 101.2%;
+          z-index: -2;
         }
       }
     }
@@ -132,7 +135,7 @@ const TimelineCard = styled(Card)`
     z-index: -2;
     opacity: 0.4;
     background: #06a763;
-  };
+  }
   :after {
     clear: both;
     content: "";
@@ -144,7 +147,7 @@ const TimelineCard = styled(Card)`
     }
   }
   @media screen and (min-width: 768px) {
-    margin:0;
+    margin: 0;
     width: 44%;
   }
 `;
@@ -167,57 +170,56 @@ const TimelineInfo = styled.div`
 
 export default () => {
   return (
-      <Section id="experience">
-        <Container>
-          <SectionTitle>
-            <h4 css={css`${text_uppercase} ${text_center}`}>
-              <img src="images/icons/layers.png" alt="demo" />
-              Experience
-            </h4>
-          </SectionTitle>
+    <Section id="experience">
+      <Container>
+        <SectionTitle>
+          <h4
+            css={css`
+              ${text_uppercase} ${text_center}
+            `}
+          >
+            <img src="images/icons/layers.png" alt="demo" />
+            Experience
+          </h4>
+        </SectionTitle>
 
-          <Experience>
-            {
-              resume.experience.map((timeline) => {
-                return (
-                  <TimelineBlock>
-                      <TimelineDot>
-                        <h6>D</h6>
-                      </TimelineDot>
-                    <Zoom>
-                      <TimelineCard className="timeline-content-emotion">
-                        <TimelineCardContent>
-                          <TimelineTitle>
-                            {timeline.title}
-                          </TimelineTitle>
-                          <TimelineInfo>
-                            <h6>
-                              <small>{timeline.instite}</small>
-                            </h6>
-                            <h6>
-                              <small>{timeline.year}</small>
-                            </h6>
-                          </TimelineInfo>
-                          <p>{timeline.shortDesc}</p>
-                          <ModalDot
-                            href="#"
-                            data-toggle="modal"
-                            data-target="#myModal-4"
-                          >
-                            <i
-                              className="fa fa-ellipsis-h"
-                              aria-hidden="true"
-                            />
-                          </ModalDot>
-                        </TimelineCardContent>
-                      </TimelineCard>
-                    </Zoom>
-                  </TimelineBlock>
-                );
-              })
-            }
-          </Experience>
-        </Container>
-      </Section>
+        <Experience>
+          {resume.experience.map(timeline => {
+            return (
+              <TimelineBlock>
+                <Zoom>
+                  <TimelineDot>
+                    <h6>D</h6>
+                  </TimelineDot>
+                </Zoom>
+                <TimelineCard className="timeline-content-emotion">
+                  <Zoom>
+                    <TimelineCardContent>
+                      <TimelineTitle>{timeline.title}</TimelineTitle>
+                      <TimelineInfo>
+                        <h6>
+                          <small>{timeline.instite}</small>
+                        </h6>
+                        <h6>
+                          <small>{timeline.year}</small>
+                        </h6>
+                      </TimelineInfo>
+                      <p>{timeline.shortDesc}</p>
+                      <ModalDot
+                        href="#"
+                        data-toggle="modal"
+                        data-target="#myModal-4"
+                      >
+                        <i className="fa fa-ellipsis-h" aria-hidden="true" />
+                      </ModalDot>
+                    </TimelineCardContent>
+                  </Zoom>
+                </TimelineCard>
+              </TimelineBlock>
+            );
+          })}
+        </Experience>
+      </Container>
+    </Section>
   );
 };

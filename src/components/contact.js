@@ -5,7 +5,10 @@ import styled from "@emotion/styled";
 import Zoom from "react-reveal/Zoom";
 import Col from "react-bootstrap/lib/Col";
 import GoogleMapReact from "google-map-react";
-import {Row, Section, Container, SectionTitle, Card, CardContent, text_uppercase, text_center} from "./common";
+import {Row,Container} from "./common/styles/containers";
+import {Card, CardContent} from "./common/styles/cards";
+import { Section, SectionTitle } from "./common/styles/sections";
+import {text_uppercase, text_center} from "./common/styles/overrides";
 
 
 const InputFieldWrapper = styled.div`

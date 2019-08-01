@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import styled from "@emotion/styled";
 import Icon from '@material-ui/core/Icon';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faUser, faAddressCard, faGraduationCap, faSlidersH, faSuitcase, faEnvelope} from "@fortawesome/free-solid-svg-icons"
 import {withStyles} from "@material-ui/styles";
 
 const CustomIcon = withStyles({
@@ -13,7 +15,7 @@ const CustomIcon = withStyles({
 
 const Menu = styled.nav`
     position: fixed;
-    left: ${({ open }) => open ? "0px" : "-225px" };
+    left: ${({ open }) => (open ? "0px" : "-225px")};
     width: 225px;
     height: 100%;
     top: 0;
@@ -35,8 +37,10 @@ const Menu = styled.nav`
             color: #1976D2;
             color: #1976D2;
         };
-        i {
-            padding: 7px;
+        span {
+          padding: 7px;
+          display: inline-block;
+          line-height: 1;
         }
 
     }
@@ -136,45 +140,63 @@ export default () => {
     const [menuOpen, setMenuOpen]  = useState(false);
 
     return (
-        <header id="home">
-          <Menu open={menuOpen}>
-            <MenuWrap>
-              <LogoFlat>
-                <img
-                  alt="personal-logo"
-                  className="img-responsive"
-                  src="images/profile/john.png"
-                />
-              </LogoFlat>
-              <br />
-              <a href="#home">
-                <i className="title-icon fa fa-user" />Home
-              </a>
-              <a href="#about">
-                <i className="title-icon fa fa-dashboard" />About
-              </a>
-              <a href="#education">
-                <i className="title-icon fa fa-graduation-cap" />Education
-              </a>
-              <a href="#skills">
-                <i className="title-icon fa fa-sliders" />Skills
-              </a>
-              <a href="#experience">
-                <i className="title-icon fa fa-suitcase" />Experience
-              </a>
-              <a href="#contact">
-                <i className="title-icon fa fa-envelope" />Contact
-              </a>
-            </MenuWrap>
-            <MenuToggle onClick={() => setMenuOpen(!menuOpen)}>
-              <ToggleNormal>
-                <TopBar open={menuOpen}>remove</TopBar>
-                <MiddleBar open={menuOpen}>remove</MiddleBar>
-                <BottomBar open={menuOpen}>remove</BottomBar>
-              </ToggleNormal>
-            </MenuToggle>
-          </Menu>
-          <HeaderBackground />
-        </header>
+      <header id="home">
+        <Menu open={menuOpen}>
+          <MenuWrap>
+            <LogoFlat>
+              <img
+                alt="personal-logo"
+                className="img-responsive"
+                src="images/profile/john.png"
+              />
+            </LogoFlat>
+            <br />
+            <a href="#home">
+              <span>
+                <FontAwesomeIcon icon={faUser} />
+              </span>
+              Home
+            </a>
+            <a href="#about">
+              <span>
+                <FontAwesomeIcon icon={faAddressCard} />
+              </span>
+              About
+            </a>
+            <a href="#education">
+              <span>
+                <FontAwesomeIcon icon={faGraduationCap} />
+              </span>
+              Education
+            </a>
+            <a href="#skills">
+              <span>
+                <FontAwesomeIcon icon={faSlidersH} />
+              </span>
+              Skills
+            </a>
+            <a href="#experience">
+              <span>
+                <FontAwesomeIcon icon={faSuitcase} />
+              </span>
+              Experience
+            </a>
+            <a href="#contact">
+              <span>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
+              Contact
+            </a>
+          </MenuWrap>
+          <MenuToggle onClick={() => setMenuOpen(!menuOpen)}>
+            <ToggleNormal>
+              <TopBar open={menuOpen}>remove</TopBar>
+              <MiddleBar open={menuOpen}>remove</MiddleBar>
+              <BottomBar open={menuOpen}>remove</BottomBar>
+            </ToggleNormal>
+          </MenuToggle>
+        </Menu>
+        <HeaderBackground />
+      </header>
     );
 }

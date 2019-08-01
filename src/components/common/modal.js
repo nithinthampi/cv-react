@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import styled from "@emotion/styled";
 import Modal from "react-bootstrap/lib/Modal";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faEllipsisH, faWindowClose} from "@fortawesome/free-solid-svg-icons";
 
 const ModalDot = styled.a`
   outline: 0;
@@ -17,8 +19,13 @@ export default () => {
   const hideModal = () =>  setShow(false);
   return (
     <React.Fragment>
-      <ModalDot href="#" data-toggle="modal" data-target="#myModal-1" onClick={showModal}>
-        <i className="fa fa-ellipsis-h" aria-hidden="true" />
+      <ModalDot
+        href="#"
+        data-toggle="modal"
+        data-target="#myModal-1"
+        onClick={showModal}
+      >
+        <FontAwesomeIcon icon={faEllipsisH} />
       </ModalDot>
       <Modal
         show={show}
@@ -36,7 +43,7 @@ export default () => {
             aria-label="Close"
           >
             <span aria-hidden="true" onClick={hideModal}>
-              <i class="fa fa-close" />
+              <FontAwesomeIcon icon={faWindowClose} />
             </span>
           </button>
           <h4 class="modal-title" id="myModalLabel-1">

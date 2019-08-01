@@ -12,20 +12,20 @@ import {
   faTwitter,
   faSkype
 } from "@fortawesome/free-brands-svg-icons";
+import { Container, Row } from "./common/styles/containers";
+import { Card, CardContent } from "./common/styles/cards";
 import {
-  Container,
-  Row,
-  clearfix,
-  img_responsive,
   text_uppercase,
   text_capitalize,
   left,
-  blue,
-  orange,
+  clearfix,
+  img_responsive,
   indigo,
+  blue,
   red,
-  dark_blue
-} from "./common";
+  dark_blue,
+  orange
+} from "./common/styles/overrides";
 
 const CardHolder = styled.div`
   overflow: visible;
@@ -34,7 +34,7 @@ const CardHolder = styled.div`
   margin-top: -194px;
 `;
 
-const Card = styled.div`
+const ProfileCard = styled(Card)`
   position: relative;
   width: 100%;
   height: 400px;
@@ -49,14 +49,6 @@ const Card = styled.div`
     overflow: visible;
     z-index: 1;
     top: 34px;
-  }
-`;
-
-const CardContent = styled.div`
-  padding: 40px;
-  border-radius: 0 0 2px 2px;
-  @media screen and (max-width: 767px) {
-    padding: 10px;
   }
 `;
 
@@ -234,7 +226,7 @@ export default () => {
         <Container>
           <Row>
             <Col xs={12}>
-              <Card>
+              <ProfileCard>
                 <Profile>
                   <img
                     alt="profile"
@@ -288,11 +280,7 @@ export default () => {
                   </Infos>
 
                   <Links>
-                    <Social
-                      href="#"
-                      id="first_one"
-                      css={indigo}
-                    >
+                    <Social href="#" id="first_one" css={indigo}>
                       <Icon icon={faFacebookF} />
                     </Social>
                     <Social href="#" css={blue}>
@@ -301,21 +289,15 @@ export default () => {
                     <Social href="#" css={red}>
                       <Icon icon="google-plus" />
                     </Social>
-                    <Social
-                      href="#"
-                      css={dark_blue}
-                    >
+                    <Social href="#" css={dark_blue}>
                       <Icon icon={faLinkedinIn} />
                     </Social>
-                    <Social
-                      href="#"
-                      css={orange}
-                    >
+                    <Social href="#" css={orange}>
                       <Icon icon="fa-rss" />
                     </Social>
                   </Links>
                 </CardContent>
-              </Card>
+              </ProfileCard>
             </Col>
           </Row>
         </Container>

@@ -2,15 +2,10 @@
 import styled from "@emotion/styled";
 import { jsx, css } from "@emotion/core";
 import Zoom from "react-reveal/Zoom";
-import {
-  Container,
-  Card,
-  Section,
-  SectionTitle,
-  text_uppercase,
-  text_center,
-  CardContent
-} from "./common";
+import { Container } from "./common/styles/containers";
+import { Section, SectionTitle } from "./common/styles/sections";
+import { Card, CardContent } from "./common/styles/cards";
+import { text_uppercase, text_center } from "./common/styles/overrides";
 import Modal from "./common/modal";
 import resume from "../data/resume.json";
 
@@ -183,11 +178,13 @@ export default () => {
           {resume.education.map(timeline => {
             return (
               <TimeLineBlock>
-                <TimelineDot>
-                  <h6>{timeline.title.substring(0, 1)}</h6>
-                </TimelineDot>
                 <Zoom>
-                  <TimelineCard className="timeline-content-emotion">
+                  <TimelineDot>
+                    <h6>{timeline.title.substring(0, 1)}</h6>
+                  </TimelineDot>
+                </Zoom>
+                <TimelineCard className="timeline-content-emotion">
+                  <Zoom>
                     <TimelineCardContent>
                       <TimelineTitle>{timeline.title}</TimelineTitle>
                       <TimelineInfo>
@@ -201,8 +198,8 @@ export default () => {
                       <p>{timeline.shortDesc}</p>
                       {timeline.longDesc ? <Modal /> : null}
                     </TimelineCardContent>
-                  </TimelineCard>
-                </Zoom>
+                  </Zoom>
+                </TimelineCard>
               </TimeLineBlock>
             );
           })}

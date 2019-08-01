@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faAngleUp} from  "@fortawesome/free-solid-svg-icons";
 
 const ScrollUp = styled.div`
   color: #fff;
@@ -39,9 +41,7 @@ export default () => {
   }, [])
   return visible ? (
     <ScrollUp id="scroll-top" onClick = {scrollUpFn}>
-      <div id="scrollup">
-        <i className="fa fa-angle-up" />
-      </div>
+        <FontAwesomeIcon icon={faAngleUp}></FontAwesomeIcon>
     </ScrollUp>
   ) : null;
 };
