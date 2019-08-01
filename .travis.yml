@@ -2,11 +2,13 @@ language: node_js
 node_js: 
 script:
   - yarn build
+  - echo $TRAVIS_BUILD_DIR
 before_install:
 - openssl aes-256-cbc -K $encrypted_95036e2191f1_key -iv $encrypted_95036e2191f1_iv
   -in LightsailDefaultKey-ap-south-1.pem.enc -out /tmp/LightsailDefaultKey-ap-south-1.pem
   -d
 - eval "$(ssh-agent -s)"
+- echo $TRAVIS_BUILD_DIR
 - chmod 600 /tmp/LightsailDefaultKey-ap-south-1.pem
 - ssh-add /tmp/LightsailDefaultKey-ap-south-1.pem
 deploy:
