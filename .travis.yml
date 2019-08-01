@@ -3,7 +3,7 @@ node_js:
 script:
   - yarn build
   - echo $TRAVIS_BUILD_DIR
-  - cwd
+  - pwd
 before_install:
 - openssl aes-256-cbc -K $encrypted_95036e2191f1_key -iv $encrypted_95036e2191f1_iv
   -in LightsailDefaultKey-ap-south-1.pem.enc -out /tmp/LightsailDefaultKey-ap-south-1.pem
