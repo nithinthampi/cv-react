@@ -1,4 +1,4 @@
-ssh -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no bitnami@52.66.162.168 rm -rf build/*
-scp -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no -rp ./build/* bitnami@52.66.162.168:~/build
-ssh -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no bitnami@52.66.162.168 rm -rf htdocs/*
-ssh -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no bitnami@52.66.162.168 mv build/* htdocs
+ssh -i /tmp/deploykey -o StrictHostKeyChecking=no $REMOTE_MACHINE rm -rf build/*
+scp -i /tmp/deploykey -o StrictHostKeyChecking=no -rp ./build/* $REMOTE_MACHINE:~/build
+ssh -i /tmp/deploykey -o StrictHostKeyChecking=no $REMOTE_MACHINE rm -rf htdocs/*
+ssh -i /tmp/deploykey -o StrictHostKeyChecking=no $REMOTE_MACHINE mv build/* htdocs

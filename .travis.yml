@@ -1,18 +1,20 @@
 language: node_js
 node_js: 
 script:
-  - yarn build
-  - echo $TRAVIS_BUILD_DIR
-  - pwd
+- yarn build
+- echo $TRAVIS_BUILD_DIR
+- pwd
 before_install:
 - openssl aes-256-cbc -K $encrypted_95036e2191f1_key -iv $encrypted_95036e2191f1_iv
-  -in LightsailDefaultKey-ap-south-1.pem.enc -out /tmp/LightsailDefaultKey-ap-south-1.pem
-  -d
+  -in deploykey -out /tmp/deploykey -d
 - eval "$(ssh-agent -s)"
 - echo $TRAVIS_BUILD_DIR
-- chmod 600 /tmp/LightsailDefaultKey-ap-south-1.pem
-- ssh-add /tmp/LightsailDefaultKey-ap-south-1.pem
+- chmod 600 /tmp/deploykey
+- ssh-add /tmp/deploykey
 deploy:
   provider: script
   skip_cleanup: true
   script: bash ./deploy.sh
+env:
+  global:
+    secure: V+jX0AD3ujQgyKrFbI1iaMNLDb7+HW1LOYj8uvKTd/4eqF5lKy0S3f1uPr+cTxHTQF4ssamiumrhJx4rj/btEhe4PbqFIUPL1btckQmtgU4EAV4a9AG1Uj+lQiP9L26DBHqT5ly0duPWV9tmsO+rdZAJXTMDPoeCjVSiyO7YYdEIcW56FcO+ZIjNhLu4vq/wbCJBa3g0lhzBZo9YRvc68gTk8XXMfRqH43KU3eq3bIWCAKNnQlriuOTlFt5o0S7AeezSSOa3vHOirPMm49zfMX1RdjqQYgSVYlDdqOmY4jh4gCHS5hgWm+QP4ONFA8Igr2NZe4d/t61zQ1yTAqDsUX3RWAVYguyhiuRC8sWf3m9aeI6LZByg10GPEONrYEOgOLyg/8mRa2VKQ8WJNKRKL4lZuF5+OINuYtFCBLbfR38LM9DHU8VAJJD2t8xh35qqG07Y0sZ8LyA7yF8Un/0i+leiAJY4nBlkRCl1RLMQa0DsZSjAVTiVqdcM6EU+OSCaOp39JjPFNzq+pRvD3I5FbxRd7hS6qvRoKe5jOhvMEqdU7vs8iIgUFPTuj73B4w2KskyiNeNQH7keM9gR9QnFUl3ALo/riWL0j2IG5iROWY4N+cD7FCHwuSTBTLiE7EZZQSyJkvzvsNcfpJDvmE1yLJbUFl4HWxofEGY2FTFsV3w=
