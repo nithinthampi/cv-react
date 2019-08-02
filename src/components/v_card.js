@@ -5,6 +5,7 @@ import Zoom from "react-reveal/Zoom";
 import Col from "react-bootstrap/lib/Col";
 import MaterialIcon from "@material-ui/core/Icon";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import ProfileImg from "../images/profile/profile.png"
 import resume from "../data/resume.json";
 import {
   faFacebookF,
@@ -228,11 +229,7 @@ export default () => {
             <Col xs={12}>
               <ProfileCard>
                 <Profile>
-                  <img
-                    alt="profile"
-                    src="images/profile/profile.png"
-                    css={img_responsive}
-                  />
+                  <img alt="profile" src={ProfileImg} css={img_responsive} />
                   <Slant />
                 </Profile>
 

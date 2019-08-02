@@ -4,6 +4,8 @@ import Icon from '@material-ui/core/Icon';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faUser, faAddressCard, faGraduationCap, faSlidersH, faSuitcase, faEnvelope} from "@fortawesome/free-solid-svg-icons"
 import {withStyles} from "@material-ui/styles";
+import BackgroundImg from "../images/backgrounds/background.jpg";
+import LogoImg from "../images/profile/john.png";
 
 const CustomIcon = withStyles({
     root: {
@@ -125,16 +127,16 @@ const BottomBar =  styled(CustomIcon)`
     transform-origin: ${({ open }) => open ? "28% 43%" : "50% 50%"};
 `
 
-const HeaderBackground =  styled.div`
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 370px;
-    background: url(../images/backgrounds/background.jpg) no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-`
+const HeaderBackground = styled.div`
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 370px;
+  background: url(${BackgroundImg}) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+`;
 
 export default () => {
     const [menuOpen, setMenuOpen]  = useState(false);
@@ -147,7 +149,7 @@ export default () => {
               <img
                 alt="personal-logo"
                 className="img-responsive"
-                src="images/profile/john.png"
+                src={LogoImg}
               />
             </LogoFlat>
             <br />

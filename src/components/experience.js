@@ -6,6 +6,7 @@ import { Container } from "./common/styles/containers";
 import { Section, SectionTitle } from "./common/styles/sections";
 import { Card, CardContent } from "./common/styles/cards";
 import { text_uppercase, text_center } from "./common/styles/overrides";
+import LayersImg from "../images/icons/layers.png";
 import resume from "../data/resume.json";
 
 const Experience = styled.div`
@@ -178,7 +179,7 @@ export default () => {
               ${text_uppercase} ${text_center}
             `}
           >
-            <img src="images/icons/layers.png" alt="demo" />
+            <img src={LayersImg} alt="demo" />
             Experience
           </h4>
         </SectionTitle>

@@ -9,6 +9,7 @@ import {Row,Container} from "./common/styles/containers";
 import {Card, CardContent} from "./common/styles/cards";
 import { Section, SectionTitle } from "./common/styles/sections";
 import {text_uppercase, text_center} from "./common/styles/overrides";
+import EnvelopeImg from "../images/icons/envelope.png";
 
 
 const InputFieldWrapper = styled.div`
@@ -19,7 +20,6 @@ const InputFieldWrapper = styled.div`
     left: 0;
     font-weight: normal;
     top: ${({ fieldKey, activeField }) => {
-      console.log(fieldKey, activeField);
       return activeField === fieldKey ? "-1.5rem" : "0.5rem";
     }};
     position: absolute;
@@ -114,7 +114,7 @@ export default () => {
                   ${text_uppercase} ${text_center}
                 `}
               >
-                <img src="images/icons/envelope.png" alt="demo" />
+                <img src={EnvelopeImg} alt="demo" />
                 Contact
               </h4>
             </SectionTitle>

@@ -7,6 +7,7 @@ import { Section, SectionTitle } from "./common/styles/sections";
 import { Card, CardContent } from "./common/styles/cards";
 import { text_uppercase, text_center } from "./common/styles/overrides";
 import Modal from "./common/modal";
+import BookImg from "../images/icons/book.png";
 import resume from "../data/resume.json";
 
 const Education = styled.div`
@@ -170,7 +171,7 @@ export default () => {
               ${text_uppercase} ${text_center}
             `}
           >
-            <img src="images/icons/book.png" alt="demo" />
+            <img src={BookImg} alt="demo" />
             Education
           </h4>
         </SectionTitle>

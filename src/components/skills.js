@@ -7,6 +7,7 @@ import { Container, Row } from "./common/styles/containers";
 import { Section, SectionTitle } from "./common/styles/sections";
 import { Card, CardContent } from "./common/styles/cards";
 import { text_uppercase, text_center } from "./common/styles/overrides";
+import MixerImg from "../images/icons/mixer.png";
 import resume from "../data/resume";
 
 const SkillsCard = styled(Card)`
@@ -72,7 +73,7 @@ export default () => {
         <Container>
           <SectionTitle>
             <h4 css={css`${text_uppercase}${text_center} `}>
-              <img src="images/icons/mixer.png" alt="demo" />
+              <img src={MixerImg} alt="demo" />
               Skills
             </h4>
           </SectionTitle>
