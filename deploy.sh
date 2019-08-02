@@ -1,2 +1,2 @@
-ssh -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no bitnami@52.66.162.168 rm -rf test && mkdir test
-scp -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no -rp ./build/* bitnami@52.66.162.168:~/test
+ssh -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no bitnami@52.66.162.168 rm -rf test
+scp -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no -rp ./build bitnami@52.66.162.168:~
