@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faUser, faAddressCard, faGraduationCap, faSlidersH, faSuitcase, faEnvelope} from "@fortawesome/free-solid-svg-icons"
 import {withStyles} from "@material-ui/styles";
 import BackgroundImg from "../images/backgrounds/background.jpg";
-import LogoImg from "../images/profile/john.png";
+import resume from "../data/resume.json";
 
 const CustomIcon = withStyles({
     root: {
@@ -63,11 +63,20 @@ const LogoFlat = styled.div`
     height: 200px;
     margin-top: -14px;
     background: #06A763;
-    img {
-        width: 100%;
-        padding: 30px 44px 44px 44px;
-    }
+    padding: 30px 44px 44px 44px;
 `
+
+const Logo = styled.div`
+    width: 100%;
+    height: 100%;
+    border: 5px solid #fff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 100%;
+    font-size: 75px;
+`;
 
 const MenuToggle =  styled.div`
     position: absolute;
@@ -146,11 +155,7 @@ export default () => {
         <Menu open={menuOpen}>
           <MenuWrap>
             <LogoFlat>
-              <img
-                alt="personal-logo"
-                className="img-responsive"
-                src={LogoImg}
-              />
+              <Logo>{resume.name.substring(0,1)}</Logo>
             </LogoFlat>
             <br />
             <a href="#home">

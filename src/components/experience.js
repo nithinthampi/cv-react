@@ -128,7 +128,7 @@ const TimelineCard = styled(Card)`
   border-left: 5px solid #1976d2;
   :before {
     content: "";
-    width: 58px;
+    width: 43px;
     height: 4px;
     position: absolute;
     top: 26px;
