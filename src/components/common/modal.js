@@ -15,7 +15,11 @@ const ModalDot = styled.a`
 
 export default () => {
   const [show, setShow]  =  useState(false); 
-  const showModal = () => setShow(true);
+  const showModal = (e) => {
+    e.preventDefault();
+    setShow(true);
+  }
+  
   const hideModal = () =>  setShow(false);
   return (
     <React.Fragment>
