@@ -4,8 +4,8 @@ import Icon from '@material-ui/core/Icon';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faUser, faAddressCard, faGraduationCap, faSlidersH, faSuitcase, faEnvelope} from "@fortawesome/free-solid-svg-icons"
 import {withStyles} from "@material-ui/styles";
-import BackgroundImg from "../images/backgrounds/background.jpg";
-import resume from "../data/resume.json";
+import BackgroundImg from "../../images/backgrounds/background.jpg";
+import resume from "../../data/resume.json";
 
 const CustomIcon = withStyles({
     root: {

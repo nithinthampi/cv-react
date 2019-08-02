@@ -5,16 +5,16 @@ import Zoom from "react-reveal/Zoom";
 import Col from "react-bootstrap/lib/Col";
 import MaterialIcon from "@material-ui/core/Icon";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import ProfileImg from "../images/profile/profile.png"
-import resume from "../data/resume.json";
+import ProfileImg from "../../images/profile/profile.png"
+import resume from "../../data/resume.json";
 import {
   faFacebookF,
   faLinkedinIn,
   faTwitter,
   faSkype
 } from "@fortawesome/free-brands-svg-icons";
-import { Container, Row } from "./common/styles/containers";
-import { Card, CardContent } from "./common/styles/cards";
+import { Container, Row } from "../common/containers";
+import { Card, CardContent } from "../common/cards";
 import {
   text_uppercase,
   text_capitalize,
@@ -26,7 +26,7 @@ import {
   red,
   dark_blue,
   orange
-} from "./common/styles/overrides";
+} from "../common/overrides";
 
 const CardHolder = styled.div`
   overflow: visible;

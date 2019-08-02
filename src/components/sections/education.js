@@ -2,13 +2,13 @@
 import styled from "@emotion/styled";
 import { jsx, css } from "@emotion/core";
 import Zoom from "react-reveal/Zoom";
-import { Container } from "./common/styles/containers";
-import { Section, SectionTitle } from "./common/styles/sections";
-import { Card, CardContent } from "./common/styles/cards";
-import { text_uppercase, text_center } from "./common/styles/overrides";
-import Modal from "./common/modal";
-import BookImg from "../images/icons/book.png";
-import resume from "../data/resume.json";
+import { Container } from "../common/containers";
+import { Section, SectionTitle } from "../common/sections";
+import { Card, CardContent } from "../common/cards";
+import { text_uppercase, text_center } from "../common/overrides";
+import Modal from "../common/modal";
+import BookImg from "../../images/icons/book.png";
+import resume from "../../data/resume.json";
 
 const Education = styled.div`
   position: relative;

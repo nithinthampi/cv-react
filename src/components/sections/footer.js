@@ -1,8 +1,8 @@
 /**@jsx jsx */
 import { jsx } from "@emotion/core";
-import { Container } from "./common/styles/containers";
-import { text_center } from "./common/styles/overrides";
-import resume from "../data/resume.json";
+import { Container } from "../common/containers";
+import { text_center } from "../common/overrides";
+import resume from "../../data/resume.json";
 
 export default () => {
   return (

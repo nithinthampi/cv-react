@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { jsx, css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
-import { text_center } from "./common/styles/overrides";
-import resume from "../data/resume.json";
+import { text_center } from "../common/overrides";
+import resume from "../../data/resume.json";
 
 const loader = keyframes`
     0% {

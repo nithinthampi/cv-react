@@ -5,11 +5,11 @@ import styled from "@emotion/styled";
 import Zoom from "react-reveal/Zoom";
 import Col from "react-bootstrap/lib/Col";
 import GoogleMapReact from "google-map-react";
-import {Row,Container} from "./common/styles/containers";
-import {Card, CardContent} from "./common/styles/cards";
-import { Section, SectionTitle } from "./common/styles/sections";
-import {text_uppercase, text_center} from "./common/styles/overrides";
-import EnvelopeImg from "../images/icons/envelope.png";
+import {Row,Container} from "../common/containers";
+import {Card, CardContent} from "../common/cards";
+import { Section, SectionTitle } from "../common/sections";
+import {text_uppercase, text_center} from "../common/overrides";
+import EnvelopeImg from "../../images/icons/envelope.png";
 
 
 const InputFieldWrapper = styled.div`

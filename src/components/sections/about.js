@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
-import {Container, Row} from "./common/styles/containers";
-import {Section} from "./common/styles/sections";
-import {Card, CardContent} from "./common/styles/cards";
+import {Container, Row} from "../common/containers";
+import {Section} from "../common/sections";
+import {Card, CardContent} from "../common/cards";
 import Col from "react-bootstrap/lib/Col";
 import Button from "react-bootstrap/lib/Button";
 import Zoom from "react-reveal/Zoom";
-import resume from "../data/resume.json";
+import resume from "../../data/resume.json";
 
 const About = styled(Section)`
   transition: all 1s;

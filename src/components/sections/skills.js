@@ -3,12 +3,12 @@ import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import Zoom from "react-reveal/Zoom";
 import Col from "react-bootstrap/lib/Col";
-import { Container, Row } from "./common/styles/containers";
-import { Section, SectionTitle } from "./common/styles/sections";
-import { Card, CardContent } from "./common/styles/cards";
-import { text_uppercase, text_center } from "./common/styles/overrides";
-import MixerImg from "../images/icons/mixer.png";
-import resume from "../data/resume";
+import { Container, Row } from "../common/containers";
+import { Section, SectionTitle } from "../common/sections";
+import { Card, CardContent } from "../common/cards";
+import { text_uppercase, text_center } from "../common/overrides";
+import MixerImg from "../../images/icons/mixer.png";
+import resume from "../../data/resume";
 
 const SkillsCard = styled(Card)`
   background: #06a763;
