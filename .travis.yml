@@ -15,4 +15,4 @@ before_install:
 deploy:
   provider: script
   skip_cleanup: true
-  script: scp -i /tmp/LightsailDefaultKey-ap-south-1.pem -o StrictHostKeyChecking=no -rp ./build bitnami@52.66.162.168:~/test
+  script: bash ./deploy.sh
