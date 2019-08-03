@@ -5,7 +5,7 @@ import Zoom from "react-reveal/Zoom";
 import Col from "react-bootstrap/lib/Col";
 import MaterialIcon from "@material-ui/core/Icon";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import ProfileImg from "../../images/profile/profile.png"
+import ProfileImg from "../../images/profile/profile.png";
 import resume from "../../data/resume.json";
 import {
   faFacebookF,
@@ -116,13 +116,20 @@ const Title = styled.span`
   }
 `;
 
-const Content = styled.span`
+const Content = styled.a`
   display: block;
   margin-left: 30px;
   font-size: 15px;
   font-weight: 400;
   line-height: 20px;
   color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  :hover,
+  :focus {
+    color: inherit;
+    text-decoration: underline;
+  }
 `;
 
 const Links = styled.div`
@@ -247,31 +254,31 @@ export default () => {
                         <Title>
                           <MaterialIcon>email</MaterialIcon>
                         </Title>
-                        <Content>{resume.basic.email}</Content>
+                        <Content href={`mailto:${resume.basic.email}`}>
+                          {resume.basic.email}
+                        </Content>
                       </li>
                       <li css={clearfix}>
                         <Title>
                           <MaterialIcon>language</MaterialIcon>
                         </Title>
-                        <Content>{resume.basic.website}</Content>
-                      </li>
-                      <li css={clearfix}>
-                        <Title>
-                          <Icon icon={faSkype} aria-hidden="true" />
-                        </Title>
-                        <Content>{resume.basic.skype}</Content>
+                        <Content href={resume.basic.website}>
+                          {resume.basic.website}
+                        </Content>
                       </li>
                       <li css={clearfix}>
                         <Title>
                           <MaterialIcon>phone</MaterialIcon>
                         </Title>
-                        <Content>{resume.basic.phone}</Content>
+                        <Content href={`tel"${resume.basic.phone}`}>
+                          {resume.basic.phone}
+                        </Content>
                       </li>
                       <li css={clearfix}>
                         <Title>
                           <MaterialIcon>place</MaterialIcon>
                         </Title>
-                        <Content>{resume.basic.address}</Content>
+                        <Content href="#contact">{resume.basic.address}</Content>
                       </li>
                     </ProfileList>
                   </Infos>
