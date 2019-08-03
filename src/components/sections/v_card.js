@@ -10,8 +10,7 @@ import resume from "../../data/resume.json";
 import {
   faFacebookF,
   faLinkedinIn,
-  faTwitter,
-  faSkype
+  faTwitter
 } from "@fortawesome/free-brands-svg-icons";
 import { Container, Row } from "../common/containers";
 import { Card, CardContent } from "../common/cards";
