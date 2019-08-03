@@ -1,6 +1,10 @@
 {
     "name": "Nithin Thampi",
     "title": "Software Engineer",
+    "location": {
+        "lat": 10.8949464,
+        "lng": 75.9260695
+    },
     "basic": {
         "title": "Software Engineer",
         "email": "nithin.thampi87@gmail.com",

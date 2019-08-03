@@ -185,9 +185,9 @@ export default () => {
         </SectionTitle>
 
         <Experience>
-          {resume.experience.map(timeline => {
+          {resume.experience.map((timeline, index) => {
             return (
-              <TimelineBlock>
+              <TimelineBlock key={index}>
                 <Zoom>
                   <TimelineDot>
                     <h6>D</h6>

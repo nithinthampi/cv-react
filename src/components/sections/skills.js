@@ -82,9 +82,9 @@ export default () => {
               <SkillsCard id="skills-card">
                 <CardContent>
                   <Row>
-                    {Object.keys(resume.skills).map(key => {
+                    {Object.keys(resume.skills).map((key, index) => {
                       return (
-                        <Col xs={12} sm={4} md={4}>
+                        <Col xs={12} sm={4} md={4} key={index}>
                           <SkillsTitle>
                             <h6
                               css={css`
@@ -94,9 +94,9 @@ export default () => {
                               {key}
                             </h6>
                           </SkillsTitle>
-                          {resume.skills[key].map(skill => {
+                          {resume.skills[key].map((skill, index) => {
                             return (
-                              <SkillBar>
+                              <SkillBar key={index}>
                                 <SkillBarTitle>
                                   <span>{skill.name}</span>
                                 </SkillBarTitle>

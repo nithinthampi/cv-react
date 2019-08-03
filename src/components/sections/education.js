@@ -176,9 +176,9 @@ export default () => {
           </h4>
         </SectionTitle>
         <Education>
-          {resume.education.map(timeline => {
+          {resume.education.map((timeline, index) => {
             return (
-              <TimeLineBlock>
+              <TimeLineBlock key={index}>
                 <Zoom>
                   <TimelineDot>
                     <h6>{timeline.title.substring(0, 1)}</h6>
