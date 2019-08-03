@@ -269,7 +269,7 @@ export default () => {
                         <Title>
                           <MaterialIcon>phone</MaterialIcon>
                         </Title>
-                        <Content href={`tel"${resume.basic.phone}`}>
+                        <Content href={`tel:${resume.basic.phone}`}>
                           {resume.basic.phone}
                         </Content>
                       </li>
