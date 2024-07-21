@@ -9,7 +9,7 @@ import { Container } from "../common/containers";
 import { text_center, text_uppercase } from "../common/overrides";
 import { Section, SectionTitle } from "../common/sections";
 
-const Experience = styled.div`
+const ExperienceContainer = styled.div`
   position: relative;
   :before {
     content: "";
@@ -169,7 +169,7 @@ const TimelineInfo = styled.div`
     }
 `;
 
-export default () => {
+const Experience = () => {
   return (
     <Section id="experience">
       <Container>
@@ -184,7 +184,7 @@ export default () => {
           </h4>
         </SectionTitle>
 
-        <Experience>
+        <ExperienceContainer>
           {resume.experience.map((timeline, index) => {
             return (
               <TimelineBlock key={index}>
@@ -219,8 +219,10 @@ export default () => {
               </TimelineBlock>
             );
           })}
-        </Experience>
+        </ExperienceContainer>
       </Container>
     </Section>
   );
 };
+
+export default Experience;

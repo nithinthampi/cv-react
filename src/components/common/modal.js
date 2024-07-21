@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import Modal from "react-bootstrap/Modal";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEllipsisH, faWindowClose} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisH, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 
 const ModalDot = styled.a`
   outline: 0;
@@ -13,14 +13,14 @@ const ModalDot = styled.a`
   }
 `;
 
-export default () => {
-  const [show, setShow]  =  useState(false); 
+const CVModal = () => {
+  const [show, setShow] = useState(false);
   const showModal = (e) => {
     e.preventDefault();
     setShow(true);
-  }
-  
-  const hideModal = () =>  setShow(false);
+  };
+
+  const hideModal = () => setShow(false);
   return (
     <React.Fragment>
       <ModalDot
@@ -64,16 +64,16 @@ export default () => {
             life. Before my freshman year at [high-school], I was shy, had low
             self-esteem and turned away from seemingly impossible challenges.
             Football has altered all of these qualities. On the first day of
-            freshman practice, the team warmed up with a game of touch
-            football. The players were split up and the game began. However,
-            during the game, I noticed that I didn't run as hard as I could,
-            nor did I try to evade my defender and get open. The fact of the
-            matter is that I really did not want to be thrown the ball. I
-            didn't want to be the one at fault if I dropped the ball and the
-            play didn't succeed. I did not want the responsibility of helping
-            the team because I was too afraid of making a mistake. That aspect
-            of my character led the first years of my high school life. All
-            the while, I went to practice.
+            freshman practice, the team warmed up with a game of touch football.
+            The players were split up and the game began. However, during the
+            game, I noticed that I didn't run as hard as I could, nor did I try
+            to evade my defender and get open. The fact of the matter is that I
+            really did not want to be thrown the ball. I didn't want to be the
+            one at fault if I dropped the ball and the play didn't succeed. I
+            did not want the responsibility of helping the team because I was
+            too afraid of making a mistake. That aspect of my character led the
+            first years of my high school life. All the while, I went to
+            practice.
           </p>
         </Modal.Body>
         <Modal.Footer />
@@ -81,3 +81,5 @@ export default () => {
     </React.Fragment>
   );
 };
+
+export default CVModal;

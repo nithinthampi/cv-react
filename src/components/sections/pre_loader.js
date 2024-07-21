@@ -108,7 +108,7 @@ const BoxInner = styled.div`
   animation: ${loader_inner} 2s infinite ease -in;
 `;
 
-export default () => {
+const PreLoader = () => {
   useEffect(() => {
     setTimeout(() => {
       document.getElementById("loading").style.display = "none";
@@ -144,3 +144,5 @@ export default () => {
     </Loading>
   );
 };
+
+export default PreLoader;

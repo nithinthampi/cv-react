@@ -1,7 +1,6 @@
-import React, {useState} from "react";
-import {Zoom} from "react-awesome-reveal";
+import React, { useState } from "react";
+import { Zoom } from "react-awesome-reveal";
 import styled from "@emotion/styled";
-
 
 const InputFieldWrapper = styled.div`
   position: relative;
@@ -67,7 +66,7 @@ const StyledTextArea = ({ id, name, label }) => {
         id={id}
         className="materialize-textarea"
         name={name}
-        onChange={e => {
+        onChange={(e) => {
           setActive(true);
           setValue(e.target.value);
         }}
@@ -96,7 +95,7 @@ const FormInput = ({ id, name, type, label }) => {
         type={type}
         name={name}
         value={value}
-        onChange={e => {
+        onChange={(e) => {
           setActive(true);
           setValue(e.target.value);
         }}
@@ -115,47 +114,37 @@ const FormInput = ({ id, name, type, label }) => {
   );
 };
 
+const Form = () => {
+  return (
+    <form id="contact-form" name="c-form">
+      <Zoom>
+        <FormInput name="first_name" id="first_name" type="text" label="Name" />
+      </Zoom>
+      <Zoom>
+        <FormInput name="subject" id="subject" type="text" label="Subject" />
+      </Zoom>
+      <Zoom>
+        <FormInput name="email" id="email" type="text" label="email" />
+      </Zoom>
 
+      <Zoom>
+        <StyledTextArea name="message" id="message" label="message" />
+      </Zoom>
+      <Zoom>
+        <div className="contact-send">
+          <SubmitButton
+            id="submit"
+            name="contactSubmit"
+            type="submit"
+            value="Submit"
+            className="btn"
+          >
+            Send
+          </SubmitButton>
+        </div>
+      </Zoom>
+    </form>
+  );
+};
 
-export default () => {
-    return (
-      <form id="contact-form" name="c-form">
-        <Zoom>
-          <FormInput
-            name="first_name"
-            id="first_name"
-            type="text"
-            label="Name"
-          />
-        </Zoom>
-        <Zoom>
-          <FormInput
-            name="subject"
-            id="subject"
-            type="text"
-            label="Subject"
-          />
-        </Zoom>
-        <Zoom>
-          <FormInput name="email" id="email" type="text" label="email" />
-        </Zoom>
-
-        <Zoom>
-          <StyledTextArea name="message" id="message" label="message" />
-        </Zoom>
-        <Zoom>
-          <div className="contact-send">
-            <SubmitButton
-              id="submit"
-              name="contactSubmit"
-              type="submit"
-              value="Submit"
-              className="btn"
-            >
-              Send
-            </SubmitButton>
-          </div>
-        </Zoom>
-      </form>
-    );
-}
+export default Form;

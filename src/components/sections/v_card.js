@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react"
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import {
   faFacebookF,
   faLinkedinIn,
-  faTwitter
+  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import MaterialIcon from "@mui/material/Icon";
@@ -24,7 +24,7 @@ import {
   orange,
   red,
   text_capitalize,
-  text_uppercase
+  text_uppercase,
 } from "../common/overrides";
 
 const CardHolder = styled.div`
@@ -226,7 +226,7 @@ const Slant = styled.div`
   }
 `;
 
-export default () => {
+const VCard = () => {
   return (
     <Zoom>
       <CardHolder id="v-card-holder">
@@ -241,8 +241,18 @@ export default () => {
 
                 <CardContent>
                   <Headings>
-                    <h4 css={css`${text_uppercase}${left}`}>{resume.name}</h4>
-                    <h6 css={css`${text_capitalize}${left}`}>
+                    <h4
+                      css={css`
+                        ${text_uppercase}${left}
+                      `}
+                    >
+                      {resume.name}
+                    </h4>
+                    <h6
+                      css={css`
+                        ${text_capitalize}${left}
+                      `}
+                    >
                       {resume.basic.title}
                     </h6>
                   </Headings>
@@ -277,7 +287,9 @@ export default () => {
                         <Title>
                           <MaterialIcon>place</MaterialIcon>
                         </Title>
-                        <Content href="#contact">{resume.basic.address}</Content>
+                        <Content href="#contact">
+                          {resume.basic.address}
+                        </Content>
                       </li>
                     </ProfileList>
                   </Infos>
@@ -308,3 +320,5 @@ export default () => {
     </Zoom>
   );
 };
+
+export default VCard;

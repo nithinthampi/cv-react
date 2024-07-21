@@ -25,7 +25,7 @@ const Indeterminate = styled.div`
   background-color: #fff;
 `;
 
-export default () => {
+const Contact = () => {
   return (
     <Section id="contact">
       <Container>
@@ -62,3 +62,5 @@ export default () => {
     </Section>
   );
 };
+
+export default Contact;

@@ -3,7 +3,7 @@ import { Container } from "../common/containers";
 import { text_center } from "../common/overrides";
 import resume from "../../data/resume.json";
 
-export default () => {
+const Footer = () => {
   return (
     <footer>
       <Container>
@@ -26,3 +26,5 @@ export default () => {
     </footer>
   );
 };
+
+export default Footer;

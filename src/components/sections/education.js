@@ -10,7 +10,7 @@ import Modal from "../common/modal";
 import BookImg from "../../images/icons/book.png";
 import resume from "../../data/resume.json";
 
-const Education = styled.div`
+const EducationContainer = styled.div`
   position: relative;
   :before {
     content: "";
@@ -161,7 +161,7 @@ const TimelineInfo = styled.div`
   }
 `;
 
-export default () => {
+const Education = () => {
   return (
     <Section id="education">
       <Container>
@@ -175,7 +175,7 @@ export default () => {
             Education
           </h4>
         </SectionTitle>
-        <Education>
+        <EducationContainer>
           {resume.education.map((timeline, index) => {
             return (
               <TimeLineBlock key={index}>
@@ -204,8 +204,10 @@ export default () => {
               </TimeLineBlock>
             );
           })}
-        </Education>
+        </EducationContainer>
       </Container>
     </Section>
   );
 };
+
+export default Education;

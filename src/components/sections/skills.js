@@ -66,13 +66,17 @@ const SkillBarPercent = styled.div`
   color: #fff;
 `;
 
-export default () => {
+const Skills = () => {
   return (
     <Zoom>
       <Section id="skills">
         <Container>
           <SectionTitle>
-            <h4 css={css`${text_uppercase}${text_center} `}>
+            <h4
+              css={css`
+                ${text_uppercase}${text_center}
+              `}
+            >
               <img src={MixerImg} alt="demo" />
               Skills
             </h4>
@@ -122,3 +126,5 @@ export default () => {
     </Zoom>
   );
 };
+
+export default Skills;

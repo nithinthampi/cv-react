@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "@emotion/styled";
-import {Container, Row} from "../common/containers";
-import {Section} from "../common/sections";
-import {Card, CardContent} from "../common/cards";
+import { Container, Row } from "../common/containers";
+import { Section } from "../common/sections";
+import { Card, CardContent } from "../common/cards";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import {Zoom} from "react-awesome-reveal";
+import { Zoom } from "react-awesome-reveal";
 import resume from "../../data/resume.json";
 
-const About = styled(Section)`
+const AboutSection = styled(Section)`
   transition: all 1s;
 `;
 
@@ -39,33 +39,28 @@ const AboutButton = styled(Button)`
   }
 `;
 
-export default () => {
+const About = () => {
   return (
     <Zoom>
-    <About id="about">
-      <Container>
-        <Row>
-          <Col xs={12}>
-            <Card id="about-card">
-              <CardContent>
-                <p>
-                  {resume.about.description}
-                </p>
-              </CardContent>
-              <Actions id="about-btn">
-                  <AboutButton href="#">
-                    Download CV
-                  </AboutButton>
-                  <AboutButton href="#contact">
-                    Contact Me
-                  </AboutButton>
-              </Actions>
-
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-    </About>
+      <AboutSection id="about">
+        <Container>
+          <Row>
+            <Col xs={12}>
+              <Card id="about-card">
+                <CardContent>
+                  <p>{resume.about.description}</p>
+                </CardContent>
+                <Actions id="about-btn">
+                  <AboutButton href="#">Download CV</AboutButton>
+                  <AboutButton href="#contact">Contact Me</AboutButton>
+                </Actions>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </AboutSection>
     </Zoom>
   );
 };
+
+export default About;

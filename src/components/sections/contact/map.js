@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import GoogleMapReact from "google-map-react";
 import resume from "../../../data/resume.json";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
 const MyMap = styled.div`
   width: 100%;
@@ -22,21 +22,22 @@ const Marker = styled.div`
   text-align: center;
 `;
 
-export default () => {
+const Map = () => {
   return (
     <MyMap id="myMap">
       <GoogleMapReact
         bootstrapURLKeys={{
-          key: "AIzaSyAOrMsWj_JlLLaSh4VOOMPTQxqr43KSMjY"
+          key: "AIzaSyAOrMsWj_JlLLaSh4VOOMPTQxqr43KSMjY",
         }}
         defaultCenter={resume.location}
         defaultZoom={11}
       >
-        
         <Marker>
-            <FontAwesomeIcon icon={faMapMarkerAlt}></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faMapMarkerAlt}></FontAwesomeIcon>
         </Marker>
       </GoogleMapReact>
     </MyMap>
   );
 };
+
+export default Map;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faAngleUp} from  "@fortawesome/free-solid-svg-icons";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollUp = styled.div`
   color: #fff;
@@ -21,27 +21,29 @@ const ScrollUp = styled.div`
 `;
 
 const scrollUpFn = () => {
-    window.scrollTo(0,0)
-}
+  window.scrollTo(0, 0);
+};
 
-export default () => {
-  const [visible, setVisible ] = useState(false);
+const ScrollToTop = () => {
+  const [visible, setVisible] = useState(false);
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setVisible(true);
-    }else{
-        setVisible(false);
+    } else {
+      setVisible(false);
     }
   };
   useEffect(() => {
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-          window.removeEventListener("scroll");
-      }
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll");
+    };
+  }, []);
   return visible ? (
-    <ScrollUp id="scroll-top" onClick = {scrollUpFn}>
-        <FontAwesomeIcon icon={faAngleUp}></FontAwesomeIcon>
+    <ScrollUp id="scroll-top" onClick={scrollUpFn}>
+      <FontAwesomeIcon icon={faAngleUp}></FontAwesomeIcon>
     </ScrollUp>
   ) : null;
 };
+
+export default ScrollToTop;
