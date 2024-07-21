@@ -1,8 +1,8 @@
-/**@jsx jsx */
-import { jsx, css } from "@emotion/core";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import Zoom from "react-reveal/Zoom";
-import Col from "react-bootstrap/lib/Col";
+import { Zoom } from "react-awesome-reveal";
+import Col from "react-bootstrap/Col";
 import { Row, Container } from "../../common/containers";
 import { Card, CardContent } from "../../common/cards";
 import { Section, SectionTitle } from "../../common/sections";
@@ -50,13 +50,13 @@ export default () => {
               </Progress>
             </Card>
           </Col>
-          <Zoom>
-            <Col xs={12} sm={12} md={7}>
+          <Col xs={12} sm={12} md={7}>
+            <Zoom>
               <Card id="map-card">
                 <Map />
               </Card>
-            </Col>
-          </Zoom>
+            </Zoom>
+          </Col>
         </Row>
       </Container>
     </Section>

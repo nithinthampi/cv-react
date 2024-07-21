@@ -1,14 +1,14 @@
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import Zoom from "react-reveal/Zoom";
-import Col from "react-bootstrap/lib/Col";
-import { Container, Row } from "../common/containers";
-import { Section, SectionTitle } from "../common/sections";
-import { Card, CardContent } from "../common/cards";
-import { text_uppercase, text_center } from "../common/overrides";
-import MixerImg from "../../images/icons/mixer.png";
+import Col from "react-bootstrap/Col";
+import { Zoom } from "react-awesome-reveal";
 import resume from "../../data/resume";
+import MixerImg from "../../images/icons/mixer.png";
+import { Card, CardContent } from "../common/cards";
+import { Container, Row } from "../common/containers";
+import { text_center, text_uppercase } from "../common/overrides";
+import { Section, SectionTitle } from "../common/sections";
 
 const SkillsCard = styled(Card)`
   background: #06a763;

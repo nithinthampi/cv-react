@@ -1,5 +1,4 @@
-/**@jsx jsx */
-import { jsx } from "@emotion/core";
+/** @jsxImportSource @emotion/react */
 import { Container } from "../common/containers";
 import { text_center } from "../common/overrides";
 import resume from "../../data/resume.json";

@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
-import { jsx, css } from "@emotion/core";
-import Zoom from "react-reveal/Zoom";
+import { css } from "@emotion/react";
+import { Zoom } from "react-awesome-reveal";
 import { Container } from "../common/containers";
 import { Section, SectionTitle } from "../common/sections";
 import { Card, CardContent } from "../common/cards";

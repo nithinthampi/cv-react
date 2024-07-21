@@ -3,9 +3,9 @@ import styled from "@emotion/styled";
 import {Container, Row} from "../common/containers";
 import {Section} from "../common/sections";
 import {Card, CardContent} from "../common/cards";
-import Col from "react-bootstrap/lib/Col";
-import Button from "react-bootstrap/lib/Button";
-import Zoom from "react-reveal/Zoom";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import {Zoom} from "react-awesome-reveal";
 import resume from "../../data/resume.json";
 
 const About = styled(Section)`

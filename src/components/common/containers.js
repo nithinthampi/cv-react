@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import  RowBootstrap from "react-bootstrap/Row"
 
 /*-------------------------------------------------------------------------------
 # CONTAINER
@@ -20,7 +21,7 @@ export const Container = styled.div`
     }
 `;
 
-export const Row = styled.div`
+export const Row = styled(RowBootstrap)`
   margin-right: -15px;
   margin-left: -15px;
   :after,

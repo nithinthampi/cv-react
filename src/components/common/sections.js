@@ -1,13 +1,22 @@
+/** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 /*-------------------------------------------------------------------------------
 #SECTION
 -------------------------------------------------------------------------------*/
 
-export const Section = styled.section`
-  position: relative;
-  padding-top: 15px;
-  padding-bottom: 30px;
-`;
+export const Section = ({ className, children }) => (
+  <section
+    className={className}
+    css={css`
+      position: relative;
+      padding-top: 15px;
+      padding-bottom: 30px;
+    `}
+  >
+    {children}
+  </section>
+);
 
 export const SectionTitle = styled.div`
   margin-bottom: 18px;
@@ -24,4 +33,3 @@ export const TitleIcon = styled.i`
   margin-right: 20px;
   color: #06a763;
 `;
-  

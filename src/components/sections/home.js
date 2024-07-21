@@ -1,18 +1,11 @@
 import React, {useState} from "react";
 import styled from "@emotion/styled";
-import Icon from '@material-ui/core/Icon';
+import Icon from '@mui/material/Icon';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faUser, faAddressCard, faGraduationCap, faSlidersH, faSuitcase, faEnvelope} from "@fortawesome/free-solid-svg-icons"
-import {withStyles} from "@material-ui/styles";
 import BackgroundImg from "../../images/backgrounds/background.jpg";
 import resume from "../../data/resume.json";
 
-const CustomIcon = withStyles({
-    root: {
-        width: "auto",
-        height: "auto"
-    }
-})(Icon)
 
 
 const Menu = styled.nav`
@@ -105,10 +98,12 @@ const MenuToggle =  styled.div`
         font-size: 31px;
         padding: 4px;
         color: #1976D2;
+        width: auto;
+        height: auto;
     }
  `;
 
-const TopBar =  styled(CustomIcon)`
+const TopBar =  styled(Icon)`
     position: absolute;
     right: 0;
     top: -6px;
@@ -118,7 +113,7 @@ const TopBar =  styled(CustomIcon)`
 }
 `;
 
-const MiddleBar = styled(CustomIcon)`
+const MiddleBar = styled(Icon)`
     position: absolute;
     right: 0;
     top: 0;
@@ -127,7 +122,7 @@ const MiddleBar = styled(CustomIcon)`
     opacity: ${({open}) => open ? "0": "1"};
 `
 
-const BottomBar =  styled(CustomIcon)`
+const BottomBar =  styled(Icon)`
     position: absolute;
     right: 0;
     top: 6px;

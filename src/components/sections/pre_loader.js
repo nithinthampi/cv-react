@@ -1,8 +1,7 @@
-/**@jsx jsx */
+/** @jsxImportSource @emotion/react */
 import { useEffect } from "react";
-import { jsx, css } from "@emotion/core";
+import { css, keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
-import { keyframes } from "@emotion/core";
 import { text_center } from "../common/overrides";
 import resume from "../../data/resume.json";
 

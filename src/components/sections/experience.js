@@ -1,13 +1,13 @@
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import Zoom from "react-reveal/Zoom";
-import { Container } from "../common/containers";
-import { Section, SectionTitle } from "../common/sections";
-import { Card, CardContent } from "../common/cards";
-import { text_uppercase, text_center } from "../common/overrides";
-import LayersImg from "../../images/icons/layers.png";
+import { Zoom } from "react-awesome-reveal";
 import resume from "../../data/resume.json";
+import LayersImg from "../../images/icons/layers.png";
+import { Card, CardContent } from "../common/cards";
+import { Container } from "../common/containers";
+import { text_center, text_uppercase } from "../common/overrides";
+import { Section, SectionTitle } from "../common/sections";
 
 const Experience = styled.div`
   position: relative;

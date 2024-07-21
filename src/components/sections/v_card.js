@@ -1,30 +1,30 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react"
 import styled from "@emotion/styled";
-import Zoom from "react-reveal/Zoom";
-import Col from "react-bootstrap/lib/Col";
-import MaterialIcon from "@material-ui/core/Icon";
-import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import ProfileImg from "../../images/profile/profile.png";
-import resume from "../../data/resume.json";
 import {
   faFacebookF,
   faLinkedinIn,
   faTwitter
 } from "@fortawesome/free-brands-svg-icons";
-import { Container, Row } from "../common/containers";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import MaterialIcon from "@mui/material/Icon";
+import { Zoom } from "react-awesome-reveal";
+import Col from "react-bootstrap/Col";
+import resume from "../../data/resume.json";
+import ProfileImg from "../../images/profile/profile.png";
 import { Card, CardContent } from "../common/cards";
+import { Container, Row } from "../common/containers";
 import {
-  text_uppercase,
-  text_capitalize,
-  left,
+  blue,
   clearfix,
+  dark_blue,
   img_responsive,
   indigo,
-  blue,
+  left,
+  orange,
   red,
-  dark_blue,
-  orange
+  text_capitalize,
+  text_uppercase
 } from "../common/overrides";
 
 const CardHolder = styled.div`

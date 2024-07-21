@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled from "@emotion/styled";
-import Modal from "react-bootstrap/lib/Modal";
+import Modal from "react-bootstrap/Modal";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEllipsisH, faWindowClose} from "@fortawesome/free-solid-svg-icons";
 
