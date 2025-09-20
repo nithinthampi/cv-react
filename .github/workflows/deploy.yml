@@ -36,17 +36,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm build
-
-      - name: Fix static asset paths for GitHub Pages
-        run: |
-          # Fix paths in index.html
-          sed -i 's|src="/static/|src="./static/|g' build/index.html
-          sed -i 's|href="/static/|href="./static/|g' build/index.html
-          sed -i 's|href="/favicon.ico|href="./favicon.ico|g' build/index.html
-          sed -i 's|href="/manifest.json|href="./manifest.json|g' build/index.html
-          # Fix paths in JavaScript bundles
-          find build/static/js -name "*.js" -exec sed -i 's|"/static/|"./static/|g' {} \;
+        run: PUBLIC_URL=. pnpm build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
