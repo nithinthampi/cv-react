@@ -2,8 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import GoogleMapReact from "google-map-react";
 import resume from "../../../data/resume.json";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
 const MyMap = styled.div`
   width: 100%;
@@ -33,7 +31,7 @@ const Map = () => {
         defaultZoom={11}
       >
         <Marker>
-          <FontAwesomeIcon icon={faMapMarkerAlt}></FontAwesomeIcon>
+          <i className="ri-map-pin-line"></i>
         </Marker>
       </GoogleMapReact>
     </MyMap>

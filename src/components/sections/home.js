@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import Icon from "@mui/material/Icon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faAddressCard,
-  faGraduationCap,
-  faSlidersH,
-  faSuitcase,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
 import BackgroundImg from "../../images/backgrounds/background.jpg";
 import resume from "../../data/resume.json";
 
@@ -160,37 +151,37 @@ const Home = () => {
           <br />
           <a href="#home">
             <span>
-              <FontAwesomeIcon icon={faUser} />
+              <i className="ri-user-line"></i>
             </span>
             Home
           </a>
           <a href="#about">
             <span>
-              <FontAwesomeIcon icon={faAddressCard} />
+              <i className="ri-contacts-line"></i>
             </span>
             About
           </a>
           <a href="#education">
             <span>
-              <FontAwesomeIcon icon={faGraduationCap} />
+              <i className="ri-graduation-cap-line"></i>
             </span>
             Education
           </a>
           <a href="#skills">
             <span>
-              <FontAwesomeIcon icon={faSlidersH} />
+              <i className="ri-slideshow-line"></i>
             </span>
             Skills
           </a>
           <a href="#experience">
             <span>
-              <FontAwesomeIcon icon={faSuitcase} />
+              <i className="ri-briefcase-line"></i>
             </span>
             Experience
           </a>
           <a href="#contact">
             <span>
-              <FontAwesomeIcon icon={faEnvelope} />
+              <i className="ri-mail-line"></i>
             </span>
             Contact
           </a>

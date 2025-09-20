@@ -1,12 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import {
-  faFacebookF,
-  faLinkedinIn,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import MaterialIcon from "@mui/material/Icon";
 import { Zoom } from "react-awesome-reveal";
 import Col from "react-bootstrap/Col";
@@ -162,6 +156,7 @@ const Social = styled.a`
   line-height: 37px;
   color: #fff;
   cursor: pointer;
+  text-decoration: none;
   :hover {
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
       0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -169,7 +164,8 @@ const Social = styled.a`
   i {
     font-size: 15px;
     vertical-align: middle;
-    padding-bottom: 15px;
+    line-height: 1;
+    padding: 0;
   }
   @media screen and (max-width: 400px) {
     margin: 4px;
@@ -296,19 +292,19 @@ const VCard = () => {
 
                   <Links>
                     <Social href="#" id="first_one" css={indigo}>
-                      <Icon icon={faFacebookF} />
+                      <i className="ri-facebook-fill"></i>
                     </Social>
                     <Social href="#" css={blue}>
-                      <Icon icon={faTwitter} />
+                      <i className="ri-twitter-fill"></i>
                     </Social>
                     <Social href="#" css={red}>
-                      <Icon icon="google-plus" />
+                      <i className="ri-google-fill"></i>
                     </Social>
                     <Social href="#" css={dark_blue}>
-                      <Icon icon={faLinkedinIn} />
+                      <i className="ri-linkedin-fill"></i>
                     </Social>
                     <Social href="#" css={orange}>
-                      <Icon icon="fa-rss" />
+                      <i className="ri-rss-fill"></i>
                     </Social>
                   </Links>
                 </CardContent>

@@ -1,3 +1,4 @@
+import "remixicon/fonts/remixicon.css";
 import React from "react";
 import PreLoader from "./components/sections/pre_loader";
 import Menu from "./components/sections/home";

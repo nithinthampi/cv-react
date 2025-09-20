@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import Modal from "react-bootstrap/Modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsisH, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 
 const ModalDot = styled.a`
   outline: 0;
@@ -29,7 +27,7 @@ const CVModal = () => {
         data-target="#myModal-1"
         onClick={showModal}
       >
-        <FontAwesomeIcon icon={faEllipsisH} />
+        <i className="ri-more-horizontal-line"></i>
       </ModalDot>
       <Modal
         show={show}
@@ -47,7 +45,7 @@ const CVModal = () => {
             aria-label="Close"
           >
             <span aria-hidden="true" onClick={hideModal}>
-              <FontAwesomeIcon icon={faWindowClose} />
+              <i className="ri-close-line"></i>
             </span>
           </button>
           <h4 class="modal-title" id="myModalLabel-1">
